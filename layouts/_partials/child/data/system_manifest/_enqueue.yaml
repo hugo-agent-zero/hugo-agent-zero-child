@@ -3,7 +3,7 @@
 _enqueue:
   fa-free:
     enabled: true
-    base_path: /vendor/fontawesome-free
+    base_path: /third_party/fontawesome-free
     location: head
     collection:
       - path: css/all.min.css

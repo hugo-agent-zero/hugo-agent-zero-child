@@ -286,13 +286,13 @@ p.haz_tagline {
   mask-position: center;
 }
 
-.haz_socials__link[data-haz_icon="facebook"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/brands/facebook.svg"); }
-.haz_socials__link[data-haz_icon="x"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/brands/x-twitter.svg"); }
-.haz_socials__link[data-haz_icon="tiktok"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/brands/tiktok.svg"); }
-.haz_socials__link[data-haz_icon="instagram"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/brands/instagram.svg"); }
-.haz_socials__link[data-haz_icon="linkedin"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/brands/linkedin.svg"); }
-.haz_socials__link[data-haz_icon="mail"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/solid/envelope.svg"); }
-.haz_socials__link[data-haz_icon="phone"] { --haz_icon_url: url("/vendor/fontawesome-free/svgs/solid/phone.svg"); }
+.haz_socials__link[data-haz_icon="facebook"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/brands/facebook.svg"); }
+.haz_socials__link[data-haz_icon="x"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/brands/x-twitter.svg"); }
+.haz_socials__link[data-haz_icon="tiktok"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/brands/tiktok.svg"); }
+.haz_socials__link[data-haz_icon="instagram"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/brands/instagram.svg"); }
+.haz_socials__link[data-haz_icon="linkedin"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/brands/linkedin.svg"); }
+.haz_socials__link[data-haz_icon="mail"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/solid/envelope.svg"); }
+.haz_socials__link[data-haz_icon="phone"] { --haz_icon_url: url("/third_party/fontawesome-free/svgs/solid/phone.svg"); }
 
 /* Blog single meta — Pico-ish: margin-bottom only; indent via padding-left */
 .haz_blog_meta {
