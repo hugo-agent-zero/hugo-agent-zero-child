@@ -1,0 +1,256 @@
+multipliers:
+  _home_main_000:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - main_pre
+      - main_start
+      - main
+      - main_end
+      - main_post
+    children:
+      enabled_false:
+        enabled: false
+        child: home_main_000_false
+        level: atoms
+        inst: todo
+      main_pre:
+        enabled: false
+        level: multipliers
+        group: single
+        inst: main_pre
+      main_start:
+        enabled: false
+        level: atoms
+        inst: todo
+      main:
+        enabled: true
+        level: atoms
+        inst: main_wrapper_000
+      main_end:
+        enabled: false
+        level: atoms
+        inst: todo
+      main_post:
+        enabled: false
+        level: multipliers
+        group: single
+        inst: main_post
+  head_main:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - priority_open
+      - document_title
+      - favicon
+      - meta
+      - main
+      - framework_css
+      - framework_js
+      - priority_close
+    children:
+      enabled_false:
+        enabled: false
+        child: head_main_false
+        level: atoms
+        inst: todo
+      priority_open:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: priority_open_000
+      document_title:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: document_title_000
+      favicon:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: favicon_000
+      meta:
+        enabled: true
+        level: multipliers
+        inst: meta
+      main:
+        enabled: false
+        level: atoms
+        inst: todo
+      framework_css:
+        enabled: true
+        level: atoms
+        inst: framework_css_pico_css
+      framework_js:
+        enabled: false
+        level: atoms
+        inst: framework_todo
+      priority_close:
+        enabled: false
+        level: atoms
+        inst: todo
+  meta:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - meta_html_global
+      - meta_security_global
+      - meta_html_basic
+      - meta_og_basic
+      - meta_og_video
+      - meta_og_audio
+      - meta_og_global
+      - meta_apple_basic
+      - meta_apple_global
+      - links_apple
+      - meta_twitter
+      - verification
+    children:
+      enabled_false:
+        enabled: false
+        child: meta_false
+        level: atoms
+        inst: todo
+      meta_html_global:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_html_global_000
+      meta_security_global:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_security_global_000
+      meta_html_basic:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_html_basic_000
+      meta_og_basic:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_og_basic_000
+      meta_og_video:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_og_video_000
+      meta_og_audio:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_og_audio_000
+      meta_og_global:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_og_global_000
+      meta_apple_basic:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_apple_basic_000
+      meta_apple_global:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_apple_global_000
+      links_apple:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: links_apple_000
+      meta_twitter:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: meta_twitter_000
+      verification:
+        enabled: true
+        level: atoms
+        group: head_tags
+        inst: verification_000
+  block_main_pre:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - body_start
+      - announcement_bar
+      - nav_meta
+      - header
+      - nav_main
+      - header_post
+    children:
+      enabled_false:
+        enabled: false
+        child: block_main_pre_false
+        level: atoms
+        inst: todo
+      body_start:
+        enabled: true
+        level: atoms
+        inst: todo
+      announcement_bar:
+        enabled: true
+        level: atoms
+        inst: announcement_bar_wrapper
+      nav_meta:
+        enabled: true
+        level: atoms
+        inst: todo
+      header:
+        enabled: true
+        level: organisms
+        group: cols
+        inst: cols_two_tag_wrapper_header
+      nav_main:
+        enabled: false
+        level: atoms
+        inst: nav_main
+      header_post:
+        enabled: true
+        level: atoms
+        inst: todo
+  block_main_post:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - pre_footer
+      - footer
+      - post_footer
+      - body_end
+    children:
+      enabled_false:
+        enabled: false
+        child: block_main_post_false
+        level: atoms
+        inst: todo
+      pre_footer:
+        enabled: true
+        level: molecules
+        group: pre_footer
+        inst: pre_footer_000
+      footer:
+        enabled: true
+        level: organisms
+        group: cols
+        inst: cols_two_tag_wrapper_footer
+      post_footer:
+        enabled: false
+        level: atoms
+        inst: todo
+      body_end:
+        enabled: true
+        level: atoms
+        inst: todo

@@ -1,0 +1,43 @@
+settings:
+  site:
+    name: Hugo Agent Zero
+    tagline: The is our FPO Hugo Agent Zero Tag Line
+    copyright: Hugo Agent Zero # legal holder; may differ from site.name
+  dates:
+    default: publishdate
+    publishdate:
+      term: Published
+      format_display: "January 2, 2006"
+      format_datetime: "2006-01-02"
+      pubdate: true
+    date:
+      term: Published
+      format_display: "January 2, 2006"
+      format_datetime: "2006-01-02"
+      pubdate: true
+    lastmod:
+      term: Updated
+      format_display: "January 2, 2006"
+      format_datetime: "2006-01-02"
+      pubdate: false
+      require_explicit: true
+      must_be_after: publishdate
+      must_be_after_seconds: 0
+  taxonomies:
+    authors:
+      term: Author
+      list_tag: ul
+      delimiter: ", "
+      rel: author
+      row_partial: haz/helpers/fn/fn_list_row_link_000
+    categories:
+      term: Categories
+      list_tag: ul
+      delimiter: ", "
+      row_partial: haz/helpers/fn/fn_list_row_link_000
+    tags:
+      term: Tags
+      list_tag: ul
+      delimiter: ", "
+      rel: tag
+      row_partial: haz/helpers/fn/fn_list_row_link_000
