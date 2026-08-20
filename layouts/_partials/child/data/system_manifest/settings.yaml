@@ -3,6 +3,10 @@ settings:
     name: Hugo Agent Zero
     tagline: The is our FPO Hugo Agent Zero Tag Line
     copyright: Hugo Agent Zero # legal holder; may differ from site.name
+  search:
+    # Kit default. false drops the Pagefind UI. Swap header search inst for another appliance.
+    # Omit the Pages workflow "Index search" step if you drop Pagefind.
+    pagefind: true
   dates:
     default: publishdate
     publishdate:

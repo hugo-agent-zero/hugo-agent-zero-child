@@ -33,6 +33,10 @@ html[data-theme="light"] {
   color: var(--haz_chrome);
 }
 
+.haz_search pagefind-modal-trigger {
+  color: var(--haz_chrome);
+}
+
 #haz_btn_color_scheme svg,
 #haz_btn_nav_main svg,
 html[data-theme="dark"] .haz_svg__moon_000,

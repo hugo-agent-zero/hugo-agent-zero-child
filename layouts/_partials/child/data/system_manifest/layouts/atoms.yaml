@@ -319,6 +319,9 @@ atoms:
         tag: article
         attrs:
           aria-labelledby: haz_page_title
+          # Pagefind index hook. Park as _data if you disable Pagefind / use another indexer.
+          data:
+            pagefind-body: true
       children:
         enabled_false:
           enabled: false
@@ -402,6 +405,9 @@ atoms:
         tag: article
         attrs:
           aria-labelledby: haz_page_title
+          # Pagefind index hook. Park as _data if you disable Pagefind / use another indexer.
+          data:
+            pagefind-body: true
       children:
         enabled_false:
           enabled: false
@@ -981,6 +987,16 @@ atoms:
           level: molecules
           group: details
           inst: faq_pack_000
+  search_pagefind_000:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/search_pagefind_000.html
+    children:
+      enabled_false:
+        enabled: false
+        child: search_pagefind_000_false
+        level: atoms
+        inst: todo
   script_color_scheme:
     enabled: true
     part:

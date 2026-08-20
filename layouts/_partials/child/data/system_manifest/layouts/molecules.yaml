@@ -427,10 +427,11 @@ molecules:
         child: header_000_controls_false
         level: atoms
         inst: todo
+      # Pagefind is kit default. enabled: false to drop it; swap inst for another appliance.
       search:
         enabled: true
         level: atoms
-        inst: todo
+        inst: search_pagefind_000
       color_scheme:
         enabled: true
         level: molecules
