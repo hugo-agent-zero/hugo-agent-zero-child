@@ -43,6 +43,17 @@ html[data-theme="light"] .haz_svg__sun_000 {
   fill: var(--haz_chrome);
 }
 
+#haz_btn_color_scheme:hover svg,
+#haz_btn_color_scheme:focus-visible svg,
+#haz_btn_nav_main:hover svg,
+#haz_btn_nav_main:focus-visible svg,
+#haz_btn_search:hover svg,
+#haz_btn_search:focus-visible svg,
+.haz_search_pagefind_modal__close:hover svg,
+.haz_search_pagefind_modal__close:focus-visible svg {
+  fill: var(--pico-primary-hover);
+}
+
 .haz_header_site__brand {
   display: flex;
   align-items: center;
