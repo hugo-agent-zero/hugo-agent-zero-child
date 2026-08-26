@@ -187,6 +187,7 @@ multipliers:
       - announcement_bar
       - nav_meta
       - header
+      - search
       - nav_main
       - header_post
     children:
@@ -212,6 +213,12 @@ multipliers:
         level: organisms
         group: cols
         inst: cols_two_tag_wrapper_header
+      # Pair with header_000_controls.search — disable both to drop kit search.
+      search:
+        enabled: true
+        level: organisms
+        group: search
+        inst: search_pagefind_modal_000
       nav_main:
         enabled: false
         level: atoms

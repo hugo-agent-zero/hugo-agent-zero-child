@@ -28,17 +28,16 @@ html[data-theme="light"] {
 }
 
 #haz_btn_color_scheme,
-#haz_btn_nav_main {
+#haz_btn_nav_main,
+#haz_btn_search {
   background: none;
-  color: var(--haz_chrome);
-}
-
-.haz_search pagefind-modal-trigger {
   color: var(--haz_chrome);
 }
 
 #haz_btn_color_scheme svg,
 #haz_btn_nav_main svg,
+#haz_btn_search svg,
+.haz_search_pagefind_modal__close svg,
 html[data-theme="dark"] .haz_svg__moon_000,
 html[data-theme="light"] .haz_svg__sun_000 {
   fill: var(--haz_chrome);
