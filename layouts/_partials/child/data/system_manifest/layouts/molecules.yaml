@@ -383,6 +383,33 @@ molecules:
         enabled: true
         level: atoms
         inst: script_hamburger
+  button_search:
+    enabled: true
+    part:
+      file: haz/atomic/molecules/button_toggle_000.html
+    props:
+      description: Search
+      sr_only: true
+      attrs:
+        id: haz_btn_search
+        class: haz_btn haz_search haz_margin_bottom_0 haz_display_block_inner_svg
+        aria-expanded: 'false'
+        aria-controls: haz_search_pagefind_modal
+    children:
+      enabled_false:
+        enabled: false
+      icon_true:
+        enabled: true
+        level: atoms
+        inst: svg_search_000
+      icon_false:
+        enabled: true
+        level: atoms
+        inst: svg_close_x_000
+      button_js:
+        enabled: true
+        level: atoms
+        inst: script_search
   nav_main_panel_000:
     enabled: true
     part:
@@ -427,11 +454,11 @@ molecules:
         child: header_000_controls_false
         level: atoms
         inst: todo
-      # Pagefind is kit default. enabled: false to drop it; swap inst for another appliance.
+      # Disable search here AND block_main_pre.search to drop kit search.
       search:
         enabled: true
-        level: atoms
-        inst: search_pagefind_000
+        level: molecules
+        inst: button_search
       color_scheme:
         enabled: true
         level: molecules

@@ -111,3 +111,24 @@ organisms:
           level: atoms
           group: blog
           inst: blog_pages_list_000
+  search:
+    search_pagefind_modal_000:
+      enabled: true
+      part:
+        folder: haz/atomic/organisms/search/search_pagefind_modal_000
+      props: {}
+      children:
+        enabled_false:
+          enabled: false
+          child: search_pagefind_modal_000_false
+          level: atoms
+          inst: todo
+        close_icon:
+          enabled: true
+          level: atoms
+          inst: svg_close_x_000
+        inner:
+          enabled: true
+          level: multipliers
+          inst: search_pagefind_modal_000_inner
+

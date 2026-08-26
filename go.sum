@@ -8,5 +8,7 @@ github.com/hugo-agent-zero/hugo-agent-zero-core v0.0.0-20260819163445-0693168658
 github.com/hugo-agent-zero/hugo-agent-zero-core v0.0.0-20260819163445-06931686588e/go.mod h1:lQf8ZgwIUhsQGIAKWB+11Gz6yrzxoQ/1rTO6UyNKWQQ=
 github.com/hugo-agent-zero/hugo-agent-zero-core v0.0.0-20260820144015-b232f4b22c4b h1:3LVyR9UkxbPJM/6wx3JdpbGFI8eeY1vBMO45Qyd2POI=
 github.com/hugo-agent-zero/hugo-agent-zero-core v0.0.0-20260820144015-b232f4b22c4b/go.mod h1:lQf8ZgwIUhsQGIAKWB+11Gz6yrzxoQ/1rTO6UyNKWQQ=
+github.com/hugo-agent-zero/hugo-agent-zero-core v0.0.0-20260826213902-fcd3cd4060bd h1:uxOmIiZPNpcgOBzf3lj0ohjDq87LghkwJS6vevjQwKs=
+github.com/hugo-agent-zero/hugo-agent-zero-core v0.0.0-20260826213902-fcd3cd4060bd/go.mod h1:lQf8ZgwIUhsQGIAKWB+11Gz6yrzxoQ/1rTO6UyNKWQQ=
 github.com/hugo-agent-zero/hugoagentzero_com-content v0.0.0-20260818191431-0ca5f672da5a h1:lrosCWtuEG+e0VpfvJQ2z31wAbOl5ZtnXXt5uHU8WiI=
 github.com/hugo-agent-zero/hugoagentzero_com-content v0.0.0-20260818191431-0ca5f672da5a/go.mod h1:QjHB3ZXXZyPIxnGM6MxPyzFYA/9RsmdydjURdXZyHtA=
