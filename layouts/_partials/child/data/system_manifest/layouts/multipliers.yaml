@@ -261,3 +261,40 @@ multipliers:
         enabled: true
         level: atoms
         inst: todo
+  search_pagefind_modal_000_inner:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - assets
+      - config
+      - input
+      - results
+    children:
+      enabled_false:
+        enabled: false
+        child: search_pagefind_modal_000_inner_false
+        level: atoms
+        inst: todo
+      assets:
+        enabled: true
+        level: atoms
+        group: pagefind
+        inst: pagefind_assets_000
+      config:
+        enabled: true
+        level: atoms
+        group: pagefind
+        inst: pagefind_config_000
+      input:
+        enabled: true
+        level: atoms
+        group: pagefind
+        inst: pagefind_input_000
+      results:
+        enabled: true
+        level: atoms
+        group: pagefind
+        inst: pagefind_results_000
+

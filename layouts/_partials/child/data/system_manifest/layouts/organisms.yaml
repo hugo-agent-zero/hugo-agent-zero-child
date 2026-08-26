@@ -127,24 +127,8 @@ organisms:
           enabled: true
           level: atoms
           inst: svg_close_x_000
-        assets:
+        inner:
           enabled: true
-          level: atoms
-          group: pagefind
-          inst: pagefind_assets_000
-        config:
-          enabled: true
-          level: atoms
-          group: pagefind
-          inst: pagefind_config_000
-        input:
-          enabled: true
-          level: atoms
-          group: pagefind
-          inst: pagefind_input_000
-        results:
-          enabled: true
-          level: atoms
-          group: pagefind
-          inst: pagefind_results_000
+          level: multipliers
+          inst: search_pagefind_modal_000_inner
 
