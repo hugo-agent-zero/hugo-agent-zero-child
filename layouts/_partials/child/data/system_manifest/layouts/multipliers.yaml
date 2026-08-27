@@ -270,6 +270,7 @@ multipliers:
       - assets
       - config
       - input
+      - summary
       - results
     children:
       enabled_false:
@@ -292,6 +293,11 @@ multipliers:
         level: atoms
         group: pagefind
         inst: pagefind_input_000
+      summary:
+        enabled: true
+        level: atoms
+        group: pagefind
+        inst: pagefind_summary_000
       results:
         enabled: true
         level: atoms
