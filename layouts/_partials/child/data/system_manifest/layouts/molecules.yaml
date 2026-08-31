@@ -368,6 +368,9 @@ molecules:
         class: haz_btn haz_margin_bottom_0 haz_display_block_inner_svg
         aria-expanded: 'false'
         aria-controls: haz_nav_main_panel
+        data:
+          haz_toggler: 'true'
+          haz_toggle: haz_state__nav_open
     children:
       enabled_false:
         enabled: false
@@ -380,9 +383,9 @@ molecules:
         level: atoms
         inst: svg_close_x_000
       button_js:
-        enabled: true
+        enabled: false
         level: atoms
-        inst: script_hamburger
+        inst: todo
   button_search:
     enabled: true
     part:
@@ -395,6 +398,9 @@ molecules:
         class: haz_btn haz_search haz_margin_bottom_0 haz_display_block_inner_svg
         aria-expanded: 'false'
         aria-controls: haz_search_pagefind_modal
+        data:
+          haz_toggler: 'true'
+          haz_toggle: haz_state__searching
     children:
       enabled_false:
         enabled: false
@@ -407,9 +413,9 @@ molecules:
         level: atoms
         inst: svg_close_x_000
       button_js:
-        enabled: true
+        enabled: false
         level: atoms
-        inst: script_search
+        inst: todo
   nav_main_panel_000:
     enabled: true
     part:
