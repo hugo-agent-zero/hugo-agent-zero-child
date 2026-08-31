@@ -825,6 +825,16 @@ atoms:
     children:
       enabled_false:
         enabled: false
+  script_toggler:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/assets/js/script_toggler_000.html
+    props:
+      attr_listen: haz_toggler
+      attr_class: haz_toggle
+    children:
+      enabled_false:
+        enabled: false
   script_scroll_toggle_000:
     enabled: true
     part:

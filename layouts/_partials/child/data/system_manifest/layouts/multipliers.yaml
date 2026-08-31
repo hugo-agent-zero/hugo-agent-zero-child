@@ -260,7 +260,7 @@ multipliers:
       body_end:
         enabled: true
         level: atoms
-        inst: todo
+        inst: script_toggler
   search_pagefind_modal_000_inner:
     enabled: true
     part:
