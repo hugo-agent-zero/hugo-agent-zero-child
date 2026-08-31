@@ -399,8 +399,7 @@ molecules:
         aria-expanded: 'false'
         aria-controls: haz_search_pagefind_modal
         data:
-          haz_toggler: 'true'
-          haz_toggle: haz_state__searching
+          haz_modal: 'true'
     children:
       enabled_false:
         enabled: false
