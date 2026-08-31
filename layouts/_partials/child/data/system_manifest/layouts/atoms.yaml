@@ -835,6 +835,17 @@ atoms:
     children:
       enabled_false:
         enabled: false
+  script_modal:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/assets/js/script_modal_000.html
+    props:
+      attr_listen: haz_modal
+      attr_dialog: haz_modal_dialog
+      attr_focus: haz_modal_focus
+    children:
+      enabled_false:
+        enabled: false
   script_scroll_toggle_000:
     enabled: true
     part:

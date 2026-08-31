@@ -259,8 +259,30 @@ multipliers:
         inst: todo
       body_end:
         enabled: true
+        level: multipliers
+        inst: body_end_scripts
+  body_end_scripts:
+    enabled: true
+    part:
+      file: haz/helpers/multipliers/multiplier.html
+    props:
+      order:
+      - toggler
+      - modal
+    children:
+      enabled_false:
+        enabled: false
+        child: body_end_scripts_false
+        level: atoms
+        inst: todo
+      toggler:
+        enabled: true
         level: atoms
         inst: script_toggler
+      modal:
+        enabled: true
+        level: atoms
+        inst: script_modal
   search_pagefind_modal_000_inner:
     enabled: true
     part:
