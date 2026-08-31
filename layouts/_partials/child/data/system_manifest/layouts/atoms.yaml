@@ -803,28 +803,6 @@ atoms:
         child: main_000_false
         level: atoms
         inst: todo
-  script_hamburger:
-    enabled: true
-    part:
-      file: haz/atomic/atoms/assets/js/script_hamburger_000.html
-    props:
-      id_btn: haz_btn_nav_main
-      id_nav: haz_nav_main
-      class_open: haz_state__nav_open
-    children:
-      enabled_false:
-        enabled: false
-  script_search:
-    enabled: true
-    part:
-      file: haz/atomic/atoms/assets/js/script_search_000.html
-    props:
-      id_btn: haz_btn_search
-      id_dialog: haz_search_pagefind_modal
-      class_open: haz_state__searching
-    children:
-      enabled_false:
-        enabled: false
   script_toggler:
     enabled: true
     part:
