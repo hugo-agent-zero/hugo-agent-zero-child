@@ -127,8 +127,8 @@ organisms:
           enabled: true
           level: atoms
           inst: svg_close_x_000
-        inner:
+        content:
           enabled: true
           level: multipliers
-          inst: search_pagefind_modal_000_inner
+          inst: search_pagefind_modal_000_content
 
