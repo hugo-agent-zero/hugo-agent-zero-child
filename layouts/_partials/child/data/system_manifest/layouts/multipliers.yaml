@@ -187,7 +187,6 @@ multipliers:
       - announcement_bar
       - nav_meta
       - header
-      - search
       - nav_main
       - header_post
     children:
@@ -213,12 +212,6 @@ multipliers:
         level: organisms
         group: cols
         inst: cols_two_tag_wrapper_header
-      # Pair with header_000_controls.search — disable both to drop kit search.
-      search:
-        enabled: true
-        level: organisms
-        group: search
-        inst: search_pagefind_modal_000
       nav_main:
         enabled: false
         level: atoms
@@ -236,6 +229,7 @@ multipliers:
       - pre_footer
       - footer
       - post_footer
+      - search
       - body_end
     children:
       enabled_false:
@@ -257,6 +251,12 @@ multipliers:
         enabled: false
         level: atoms
         inst: todo
+      # Pair with header_000_controls.search — disable both to drop kit search.
+      search:
+        enabled: true
+        level: organisms
+        group: search
+        inst: search_pagefind_modal_000
       body_end:
         enabled: true
         level: multipliers
