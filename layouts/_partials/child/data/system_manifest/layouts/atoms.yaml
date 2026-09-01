@@ -1196,6 +1196,21 @@ atoms:
         child: html_open_false
         level: atoms
         inst: todo
+  skip_to_main_000:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/skip_to_main_000.html
+    props:
+      term: Skip to main
+      attrs:
+        href: "#haz_main"
+        class: haz_sr_only haz_skip_to_main
+    children:
+      enabled_false:
+        enabled: false
+        child: skip_to_main_000_false
+        level: atoms
+        inst: todo
   _framework_css_simple_css:
     enabled: true
     part:

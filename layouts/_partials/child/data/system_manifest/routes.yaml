@@ -24,6 +24,7 @@ routes:
   # profile enabled branch objects:
   # - enabled_true.key_layouts_entry / enabled_false.key_layouts_entry
   # - enabled_true.key_body_attrs / enabled_false.key_body_attrs
+  # - enabled_true.main / enabled_false.main (bool; omit = true → <main> + skip-to-main)
   map_child:
     single_home_000:
       enabled: true
@@ -81,6 +82,17 @@ routes:
       enabled_false:
         key_layouts_entry: ""
         key_body_attrs: ""
+    # Parked reminder: omit `main` → true. Set false to drop <main> and skip-to-main.
+    _main_false:
+      enabled: false
+      enabled_true:
+        key_layouts_entry: ""
+        key_body_attrs: ""
+        main: false
+      enabled_false:
+        key_layouts_entry: ""
+        key_body_attrs: ""
+        main: false
 
   # key_layouts_entry points to map_layouts_entry (the singular route entry target).
   # routes decides one start entry; layouts.yaml owns full component graph.
