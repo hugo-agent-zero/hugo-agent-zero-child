@@ -199,7 +199,7 @@ multipliers:
       body_start:
         enabled: true
         level: atoms
-        inst: todo
+        inst: skip_to_main_000
       announcement_bar:
         enabled: true
         level: atoms
