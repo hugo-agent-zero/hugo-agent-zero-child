@@ -31,6 +31,7 @@ routes:
       enabled_true:
         key_layouts_entry: single_home_000
         key_body_attrs: single_page
+        main: false
       enabled_false:
         key_layouts_entry: ""
         key_body_attrs: ""
@@ -63,6 +64,7 @@ routes:
       enabled_true:
         key_layouts_entry: blog_index_000
         key_body_attrs: list_blog
+        main: false
       enabled_false:
         key_layouts_entry: ""
         key_body_attrs: ""
