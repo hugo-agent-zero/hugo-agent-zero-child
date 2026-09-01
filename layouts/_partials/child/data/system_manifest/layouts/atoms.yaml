@@ -1211,22 +1211,6 @@ atoms:
         child: skip_to_main_000_false
         level: atoms
         inst: todo
-  _framework_css_simple_css:
-    enabled: true
-    part:
-      file: haz/atomic/atoms/framework_css.html
-    props:
-      css:
-        1_main: css/simple/simple.min.css
-        2_haz: css/haz/haz.css
-        3_extended: css/simple/simple-extended.css
-        4_overrides: child/css/simple/simple-override.css
-    children:
-      enabled_false:
-        enabled: false
-        child: framework_css_simple_css_false
-        level: atoms
-        inst: todo
   framework_css_pico_css:
     enabled: true
     part:
