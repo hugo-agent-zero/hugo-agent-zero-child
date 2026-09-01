@@ -1218,8 +1218,9 @@ atoms:
     props:
       css:
         1_main: css/simple/simple.min.css
-        2_extended: css/simple/simple-extended.css
-        3_overrides: child/css/simple/simple-override.css
+        2_haz: css/haz/haz.css
+        3_extended: css/simple/simple-extended.css
+        4_overrides: child/css/simple/simple-override.css
     children:
       enabled_false:
         enabled: false
@@ -1234,8 +1235,9 @@ atoms:
       css:
         1_main: css/pico/pico.pink.min.css
         # vanilla still on disk: css/pico/pico.min.css — swap 1_main to demo theme switch
-        2_extended: css/pico/pico-x-agent-zero.css
-        3_overrides: child/css/pico/pico-override.css
+        2_haz: css/haz/haz.css
+        3_extended: css/pico/pico-x-agent-zero.css
+        4_overrides: child/css/pico/pico-override.css
     children:
       enabled_false:
         enabled: false
