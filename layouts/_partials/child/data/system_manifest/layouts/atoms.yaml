@@ -752,6 +752,27 @@ atoms:
         child: blog_pages_list_item_000_false
         level: atoms
         inst: todo
+    blog_index_section_wrapper_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/tag_tag_wrapper.html
+      props:
+        tag: section
+        attrs:
+          class: haz_section haz_section--blog
+          aria:
+            labelledby: haz_page_title
+      children:
+        enabled_false:
+          enabled: false
+          child: blog_index_section_wrapper_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: organisms
+          group: sections
+          inst: blog_index_000
   announcement_bar_wrapper:
     enabled: true
     part:
