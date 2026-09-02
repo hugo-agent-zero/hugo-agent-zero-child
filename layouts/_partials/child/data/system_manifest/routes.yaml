@@ -114,14 +114,14 @@ routes:
       inst: single_page_wrapper_000
     blog_index_000:
       enabled: true
-      level: organisms
-      group: sections
-      inst: blog_index_000
+      level: atoms
+      group: blog
+      inst: blog_index_section_wrapper_000
     blog_000:
       enabled: true
-      level: organisms
-      group: sections
-      inst: blog_index_000
+      level: atoms
+      group: blog
+      inst: blog_index_section_wrapper_000
     taxonomy_000:
       enabled: true
       level: organisms
