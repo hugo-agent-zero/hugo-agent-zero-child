@@ -319,9 +319,6 @@ atoms:
         tag: article
         attrs:
           aria-labelledby: haz_page_title
-          # Pagefind index hook. Park as _data if you disable Pagefind / use another indexer.
-          data:
-            pagefind-body: true
       children:
         enabled_false:
           enabled: false
@@ -405,9 +402,6 @@ atoms:
         tag: article
         attrs:
           aria-labelledby: haz_page_title
-          # Pagefind index hook. Park as _data if you disable Pagefind / use another indexer.
-          data:
-            pagefind-body: true
       children:
         enabled_false:
           enabled: false
@@ -514,7 +508,6 @@ atoms:
       props:
         order:
         - meta_byline_group
-        - meta_desc_group
         - meta_tax_group
       children:
         enabled_false:
@@ -527,16 +520,11 @@ atoms:
           level: atoms
           group: blog
           inst: meta_byline_group_000
-        meta_desc_group:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_desc_group_single_000
         meta_tax_group:
           enabled: true
           level: atoms
           group: blog
-          inst: meta_tax_group_000
+          inst: meta_tax_group_single_000
     list_blog_meta_wrapper_000:
       enabled: true
       part:
@@ -580,7 +568,6 @@ atoms:
       props:
         order:
         - meta_byline_group
-        - meta_desc_group
         - meta_tax_group
       children:
         enabled_false:
@@ -593,56 +580,11 @@ atoms:
           level: atoms
           group: blog
           inst: meta_byline_group_000
-        meta_desc_group:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_desc_group_list_000
         meta_tax_group:
           enabled: true
           level: atoms
           group: blog
-          inst: meta_tax_group_000
-    meta_desc_group_single_000:
-      enabled: true
-      part:
-        file: haz/atomic/atoms/tag_tag_wrapper.html
-      props:
-        tag: div
-        content_required: true
-        attrs:
-          class: haz_blog_meta__desc
-      children:
-        enabled_false:
-          enabled: false
-          child: meta_desc_group_single_000_false
-          level: atoms
-          inst: todo
-        content:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_desc_single_000
-    meta_desc_group_list_000:
-      enabled: true
-      part:
-        file: haz/atomic/atoms/tag_tag_wrapper.html
-      props:
-        tag: div
-        content_required: true
-        attrs:
-          class: haz_blog_meta__desc
-      children:
-        enabled_false:
-          enabled: false
-          child: meta_desc_group_list_000_false
-          level: atoms
-          inst: todo
-        content:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_desc_list_000
+          inst: meta_tax_group_list_000
     meta_desc_single_000:
       enabled: true
       part:
@@ -670,7 +612,7 @@ atoms:
           child: meta_desc_list_000_false
           level: atoms
           inst: todo
-    meta_tax_group_000:
+    meta_tax_group_single_000:
       enabled: true
       part:
         file: haz/atomic/atoms/tag_tag_wrapper.html
@@ -682,14 +624,94 @@ atoms:
       children:
         enabled_false:
           enabled: false
-          child: meta_tax_group_000_false
+          child: meta_tax_group_single_000_false
           level: atoms
           inst: todo
         content:
           enabled: true
           level: atoms
           group: blog
-          inst: meta_tax_list_000
+          inst: meta_tax_list_single_000
+    meta_tax_group_list_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/tag_tag_wrapper.html
+      props:
+        tag: div
+        content_required: true
+        attrs:
+          class: haz_blog_meta__tax
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_tax_group_list_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_tax_list_list_000
+    meta_tax_list_single_000:
+      enabled: true
+      part:
+        file: haz/helpers/multipliers/multiplier.html
+      props:
+        order:
+        - meta_desc
+        - meta_categories
+        - meta_tags
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_tax_list_single_000_false
+          level: atoms
+          inst: todo
+        meta_desc:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_desc_single_000
+        meta_categories:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_categories_000
+        meta_tags:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_tags_000
+    meta_tax_list_list_000:
+      enabled: true
+      part:
+        file: haz/helpers/multipliers/multiplier.html
+      props:
+        order:
+        - meta_desc
+        - meta_categories
+        - meta_tags
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_tax_list_list_000_false
+          level: atoms
+          inst: todo
+        meta_desc:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_desc_list_000
+        meta_categories:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_categories_000
+        meta_tags:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_tags_000
     meta_byline_group_000:
       enabled: true
       part:
@@ -710,30 +732,6 @@ atoms:
           level: atoms
           group: blog
           inst: meta_byline_list_000
-    meta_tax_list_000:
-      enabled: true
-      part:
-        file: haz/helpers/multipliers/multiplier.html
-      props:
-        order:
-        - meta_categories
-        - meta_tags
-      children:
-        enabled_false:
-          enabled: false
-          child: meta_tax_list_000_false
-          level: atoms
-          inst: todo
-        meta_categories:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_categories_000
-        meta_tags:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_tags_000
     meta_byline_list_000:
       enabled: true
       part:
@@ -971,24 +969,14 @@ atoms:
         child: main_000_false
         level: atoms
         inst: todo
-  script_toggler:
+  script_hamburger:
     enabled: true
     part:
-      file: haz/atomic/atoms/assets/js/script_toggler_000.html
+      file: haz/atomic/atoms/assets/js/script_hamburger_000.html
     props:
-      attr_listen: haz_toggler
-      attr_class: haz_toggle
-    children:
-      enabled_false:
-        enabled: false
-  script_modal:
-    enabled: true
-    part:
-      file: haz/atomic/atoms/assets/js/script_modal_000.html
-    props:
-      attr_listen: haz_modal
-      attr_dialog: haz_modal_dialog
-      attr_focus: haz_modal_focus
+      id_btn: haz_btn_nav_main
+      id_nav: haz_nav_main
+      class_open: haz_state__nav_open
     children:
       enabled_false:
         enabled: false
@@ -1035,13 +1023,6 @@ atoms:
     enabled: true
     part:
       file: haz/atomic/atoms/assets/svg/svg_hamburger_000.html
-    children:
-      enabled_false:
-        enabled: false
-  svg_search_000:
-    enabled: true
-    part:
-      file: haz/atomic/atoms/assets/svg/svg_search_000.html
     children:
       enabled_false:
         enabled: false
@@ -1172,128 +1153,6 @@ atoms:
           level: molecules
           group: details
           inst: faq_pack_000
-  pagefind:
-    pagefind_assets_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_assets_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_assets_000_false
-          level: atoms
-          inst: todo
-    pagefind_config_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_config_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_config_000_false
-          level: atoms
-          inst: todo
-    pagefind_input_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_input_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_input_000_false
-          level: atoms
-          inst: todo
-    pagefind_results_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_results_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_results_000_false
-          level: atoms
-          inst: todo
-    pagefind_summary_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_summary_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_summary_000_false
-          level: atoms
-          inst: todo
-    pagefind_keyboard_hints_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_keyboard_hints_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_keyboard_hints_000_false
-          level: atoms
-          inst: todo
-    pagefind_filter_dropdown_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_filter_dropdown_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_filter_dropdown_000_false
-          level: atoms
-          inst: todo
-    pagefind_filter_pane_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_filter_pane_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_filter_pane_000_false
-          level: atoms
-          inst: todo
-    pagefind_searchbox_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_searchbox_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_searchbox_000_false
-          level: atoms
-          inst: todo
-    pagefind_modal_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_modal_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_modal_000_false
-          level: atoms
-          inst: todo
-    pagefind_modal_trigger_000:
-      enabled: true
-      part:
-        folder: haz/atomic/atoms/pagefind/pagefind_modal_trigger_000
-      props: {}
-      children:
-        enabled_false:
-          enabled: false
-          child: pagefind_modal_trigger_000_false
-          level: atoms
-          inst: todo
   script_color_scheme:
     enabled: true
     part:
@@ -1364,19 +1223,19 @@ atoms:
         child: html_open_false
         level: atoms
         inst: todo
-  skip_to_main_000:
+  _framework_css_simple_css:
     enabled: true
     part:
-      file: haz/atomic/atoms/skip_to_main_000.html
+      file: haz/atomic/atoms/framework_css.html
     props:
-      anchor_text: Skip to main
-      attrs:
-        href: "#haz_main"
-        class: haz_sr_only haz_skip_to_main
+      css:
+        1_main: css/simple/simple.min.css
+        2_extended: css/simple/simple-extended.css
+        3_overrides: child/css/simple/simple-override.css
     children:
       enabled_false:
         enabled: false
-        child: skip_to_main_000_false
+        child: framework_css_simple_css_false
         level: atoms
         inst: todo
   framework_css_pico_css:
@@ -1387,9 +1246,8 @@ atoms:
       css:
         1_main: css/pico/pico.pink.min.css
         # vanilla still on disk: css/pico/pico.min.css — swap 1_main to demo theme switch
-        2_haz: css/haz/haz.css
-        3_extended: css/pico/pico-x-agent-zero.css
-        4_overrides: child/css/pico/pico-override.css
+        2_extended: css/pico/pico-x-agent-zero.css
+        3_overrides: child/css/pico/pico-override.css
     children:
       enabled_false:
         enabled: false
