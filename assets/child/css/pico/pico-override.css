@@ -376,6 +376,13 @@ p.haz_tagline {
   margin-bottom: 0;
 }
 
+/* Desc (Summary / Overview): label above body copy */
+.haz_blog_meta__desc > div {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
 /* FAQ / details list */
 .haz_section--faq {
   margin-block: 2rem;
