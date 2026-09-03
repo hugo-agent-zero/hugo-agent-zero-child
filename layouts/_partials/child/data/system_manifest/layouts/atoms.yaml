@@ -513,24 +513,163 @@ atoms:
         file: haz/helpers/multipliers/multiplier.html
       props:
         order:
-        - meta_tax_group
         - meta_byline_group
+        - meta_desc_group
+        - meta_tax_group
       children:
         enabled_false:
           enabled: false
           child: single_blog_meta_groups_false
           level: atoms
           inst: todo
-        meta_tax_group:
-          enabled: true
-          level: atoms
-          group: blog
-          inst: meta_tax_group_000
         meta_byline_group:
           enabled: true
           level: atoms
           group: blog
           inst: meta_byline_group_000
+        meta_desc_group:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_desc_group_single_000
+        meta_tax_group:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_tax_group_000
+    list_blog_meta_wrapper_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/tag_tag_wrapper.html
+      props:
+        tag: div
+        attrs:
+          class: haz_blog_meta
+      children:
+        enabled_false:
+          enabled: false
+          child: list_blog_meta_wrapper_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: list_blog_meta_dl_000
+    list_blog_meta_dl_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/tag_dl_list_wrapper_000.html
+      props:
+        content_required: true
+      children:
+        enabled_false:
+          enabled: false
+          child: list_blog_meta_dl_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: list_blog_meta_groups
+    list_blog_meta_groups:
+      enabled: true
+      part:
+        file: haz/helpers/multipliers/multiplier.html
+      props:
+        order:
+        - meta_byline_group
+        - meta_desc_group
+        - meta_tax_group
+      children:
+        enabled_false:
+          enabled: false
+          child: list_blog_meta_groups_false
+          level: atoms
+          inst: todo
+        meta_byline_group:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_byline_group_000
+        meta_desc_group:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_desc_group_list_000
+        meta_tax_group:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_tax_group_000
+    meta_desc_group_single_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/tag_tag_wrapper.html
+      props:
+        tag: div
+        content_required: true
+        attrs:
+          class: haz_blog_meta__desc
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_desc_group_single_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_desc_single_000
+    meta_desc_group_list_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/tag_tag_wrapper.html
+      props:
+        tag: div
+        content_required: true
+        attrs:
+          class: haz_blog_meta__desc
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_desc_group_list_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: meta_desc_list_000
+    meta_desc_single_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/hugo_page_desc_dt_dd_000.html
+      props:
+        keys:
+          - desc_long
+          - desc_short
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_desc_single_000_false
+          level: atoms
+          inst: todo
+    meta_desc_list_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/hugo_page_desc_dt_dd_000.html
+      props:
+        keys:
+          - desc_short
+      children:
+        enabled_false:
+          enabled: false
+          child: meta_desc_list_000_false
+          level: atoms
+          inst: todo
     meta_tax_group_000:
       enabled: true
       part:
@@ -759,7 +898,7 @@ atoms:
           enabled: true
           level: atoms
           group: blog
-          inst: single_blog_meta_wrapper_000
+          inst: list_blog_meta_wrapper_000
     blog_index_section_wrapper_000:
       enabled: true
       part:

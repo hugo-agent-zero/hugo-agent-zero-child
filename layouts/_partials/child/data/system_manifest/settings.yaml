@@ -23,6 +23,11 @@ settings:
       require_explicit: true
       must_be_after: publishdate
       must_be_after_seconds: 0
+  desc:
+    desc_short:
+      term: Summary
+    desc_long:
+      term: Overview
   taxonomies:
     authors:
       term: Author
