@@ -361,6 +361,21 @@ p.haz_tagline {
   list-style: none;
 }
 
+/* Pages list teasers — unstyled list; Pico article chrome stays on each row */
+.haz_pages_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.haz_pages_list > li > article > :first-child {
+  margin-top: 0;
+}
+
+.haz_pages_list .haz_blog_meta {
+  margin-bottom: 0;
+}
+
 /* FAQ / details list */
 .haz_section--faq {
   margin-block: 2rem;

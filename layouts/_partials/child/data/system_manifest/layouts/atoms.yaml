@@ -729,6 +729,7 @@ atoms:
         method: .Pages
         list_type: ul
         attrs:
+          class: haz_pages_list
           role: list
           aria-label: Blog posts
       children:
@@ -746,12 +747,19 @@ atoms:
       enabled: true
       part:
         file: haz/atomic/atoms/hugo_pages_list_item_000.html
+      props:
+        tag: h2
       children:
         enabled_false:
-        enabled: false
-        child: blog_pages_list_item_000_false
-        level: atoms
-        inst: todo
+          enabled: false
+          child: blog_pages_list_item_000_false
+          level: atoms
+          inst: todo
+        content:
+          enabled: true
+          level: atoms
+          group: blog
+          inst: single_blog_meta_wrapper_000
     blog_index_section_wrapper_000:
       enabled: true
       part:
