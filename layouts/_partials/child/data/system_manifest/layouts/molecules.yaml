@@ -334,7 +334,7 @@ molecules:
     part:
       file: haz/atomic/molecules/button_toggle_000.html
     props:
-      description: TODO
+      description: Color scheme
       attrs:
         id: haz_btn_color_scheme
         class: haz_btn haz_margin_bottom_0 haz_display_block_inner_svg
