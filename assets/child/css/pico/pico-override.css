@@ -15,8 +15,19 @@
   --haz_measure: min(45rem, 90%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
-  /* Sack Pico’s stepped root font-size ladder; scale smoothly from 16px to 18px. */
-  --pico-font-size: clamp(100%, 0.9rem + 0.35vw, 112.5%);
+
+  /*
+    #51 spike — measure vs 65ch sweet spot → fluid root type.
+    min: always ≥ browser base (100%).
+    val + max: follow delta = measure / 65ch (narrow → ease down; wide → grow).
+    If measure/ch division misbehaves on :root, try --haz_measure_sweet: 32.5rem
+    (65 × ~0.5em rule of thumb) instead of 65ch.
+  */
+  --haz_measure_sweet: 65ch;
+  --haz_measure_delta: calc(var(--haz_measure) / var(--haz_measure_sweet));
+  --haz_font_val: calc((0.9rem + 0.35vw) * var(--haz_measure_delta));
+  --haz_font_max: calc(112.5% * var(--haz_measure_delta));
+  --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
 }
 
 /* Light pink primary is soft on white (~5.5:1). Darken for links/chrome (~7.9:1 AAA).
