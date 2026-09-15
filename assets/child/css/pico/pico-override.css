@@ -13,10 +13,10 @@
 :root,
 :host {
   --haz_measure: min(45rem, 90%);
-  /* Keep in sync with the rem ceiling of --haz_measure; drives core #51 type delta. */
-  --haz_measure_type: 45rem;
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
+  /* Sack Pico’s stepped root font-size ladder; scale smoothly from 16px to 18px. */
+  --pico-font-size: clamp(100%, 0.9rem + 0.35vw, 112.5%);
 }
 
 /* Light pink primary is soft on white (~5.5:1). Darken for links/chrome (~7.9:1 AAA).
