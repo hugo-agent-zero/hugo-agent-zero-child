@@ -230,18 +230,18 @@ atoms:
           child: meta_apple_basic_000_false
           level: atoms
           inst: todo
-    meta_apple_global_000:
+    meta_web_app_global_000:
       enabled: true
       part:
-        folder: haz/atomic/atoms/head_tags/meta_apple_global_000
+        folder: haz/atomic/atoms/head_tags/meta_web_app_global_000
         # Unpark → preset: to layer child content over Atomic defaults
-        _preset: content/presets/atomic/atoms/head_tags/meta_apple_global_000_00.yaml
+        _preset: content/presets/atomic/atoms/head_tags/meta_web_app_global_000_00.yaml
         cms:
           provider: page
       children:
         enabled_false:
           enabled: false
-          child: meta_apple_global_000_false
+          child: meta_web_app_global_000_false
           level: atoms
           inst: todo
     links_apple_000:
