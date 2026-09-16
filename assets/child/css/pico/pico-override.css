@@ -9,10 +9,10 @@
    Child can also host a downloaded theme under this folder.
 */
 
-/* Site settings — tweak here first */
+/* #57 — mobile-first: tighter outside gutters (95%); 90% from 40rem up.
+   This is screen-edge → measure column, not padding inside main/aside. */
 :root,
 :host {
-  /* #57 — mobile-first measure; wider side gutters only from 40rem up. */
   --haz_measure: min(45rem, 95%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
@@ -282,11 +282,13 @@ p.haz_tagline {
   line-height: 1.25;
 }
 
-/* Socials (pre_footer) — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
-   Stays in measure column with body > * (#57); aligns with header panel socials. */
+/* Socials — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
+   Same horizontal inset as measure-shell content (main/aside), for both the header
+   panel instance and body-level pre_footer — do not move this to body > nav only. */
 .haz_socials {
   display: block;
   margin-block: 1rem;
+  padding-inline: var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem));
 }
 
 .haz_socials__menu {
