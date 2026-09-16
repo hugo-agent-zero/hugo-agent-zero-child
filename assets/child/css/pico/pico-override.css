@@ -443,7 +443,7 @@ p.haz_tagline {
 
 /*
   =============================================================================
-  #51 sandbox — measure vs ~65ch → fluid root type (TRY / ITERATE HERE)
+  #51 sandbox — measure vs 65ch → fluid root type (TRY / ITERATE HERE)
   =============================================================================
   WHERE: this file, AFTER the baseline Site settings :root (and after Pico loads
   earlier in the stack). Later rules win → this block is the sandbox.
@@ -452,18 +452,24 @@ p.haz_tagline {
   - Tweak vars / clamp below; leave the baseline :root clamp alone.
   - DevTools: inspect html / :root → this file → --pico-font-size / --haz_font_*.
   - Kill switch: comment out this whole sandbox to fall back to baseline + Pico.
+  - Resting: sweet === type === 65ch → delta = 1 (no boost).
+  - Exercise delta: live-edit --haz_measure_type away from sweet (e.g. 80ch / 40ch).
+  - If ch on :root misbehaves in a browser, note it — do not silently revert to rem
+    without Mark (ch is the locked spine for the HAZ tool).
 
-  FORMULA (first guess — expect to be wrong; adjust freely):
-  - sweet ≈ 65ch as 32.5rem (65 × ~0.5em) so length math stays valid
-  - --haz_measure_type = rem knob for type (layout --haz_measure may stay min(rem,%))
+  FORMULA (first guess — expect to tweak):
+  - --haz_measure_sweet: 65ch (HAZ line-length spine; tracks font’s 0 glyph)
+  - --haz_measure_type: starts equal to sweet; move it to change delta
+  - layout --haz_measure may stay min(rem, %) for now (separate knob)
   - min always 100% (browser base); val + max follow delta both ways
   - re-assert at Pico breakpoints so their stepped --pico-font-size cannot win
+    (cleanup later if redundant)
   =============================================================================
 */
 :root,
 :host {
-  --haz_measure_sweet: 32.5rem;
-  --haz_measure_type: 45rem;
+  --haz_measure_sweet: 65ch;
+  --haz_measure_type: 65ch;
   --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
   --haz_font_val: calc((0.9rem + 0.35vw) * var(--haz_measure_delta));
   --haz_font_max: calc(112.5% * var(--haz_measure_delta));
