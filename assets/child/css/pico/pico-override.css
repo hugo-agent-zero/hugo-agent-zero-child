@@ -12,7 +12,8 @@
 /* Site settings — tweak here first */
 :root,
 :host {
-  --haz_measure: min(45rem, 90%);
+  /* #57 — mobile-first measure; wider side gutters only from 40rem up. */
+  --haz_measure: min(45rem, 95%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
 
@@ -31,6 +32,13 @@
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
   --haz_font_max: calc(112.5% * var(--haz_measure_delta));
   --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+}
+
+@media (min-width: 40rem) {
+  :root,
+  :host {
+    --haz_measure: min(45rem, 90%);
+  }
 }
 
 /* Light pink primary is soft on white (~5.5:1). Darken for links/chrome (~7.9:1 AAA).
@@ -275,7 +283,7 @@ p.haz_tagline {
 }
 
 /* Socials (pre_footer) — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
-   Measure width: core pico-x .haz_socials with header/footer chrome (#57). */
+   Stays in measure column with body > * (#57); aligns with header panel socials. */
 .haz_socials {
   display: block;
   margin-block: 1rem;
