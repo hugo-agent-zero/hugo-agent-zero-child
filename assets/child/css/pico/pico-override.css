@@ -9,10 +9,10 @@
    Child can also host a downloaded theme under this folder.
 */
 
-/* Site settings — tweak here first */
+/* #57 — mobile-first: tighter outside gutters (95%); 90% from 40rem up.
+   This is screen-edge → measure column, not padding inside main/aside. */
 :root,
 :host {
-  /* #57 — mobile-first measure; wider side gutters only from 40rem up. */
   --haz_measure: min(45rem, 95%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
@@ -288,13 +288,7 @@ p.haz_tagline {
 .haz_socials {
   display: block;
   margin-block: 1rem;
-  padding-inline: calc(var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem)) * 0.5);
-}
-
-@media (min-width: 40rem) {
-  .haz_socials {
-    padding-inline: var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem));
-  }
+  padding-inline: var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem));
 }
 
 .haz_socials__menu {
