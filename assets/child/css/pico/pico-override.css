@@ -12,7 +12,8 @@
 /* Site settings — tweak here first */
 :root,
 :host {
-  --haz_measure: min(45rem, 90%);
+  /* #57 — mobile-first measure; wider side gutters only from 40rem up. */
+  --haz_measure: min(45rem, 95%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
 
@@ -33,11 +34,10 @@
   --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
 }
 
-/* #57 — narrow viewports: halve side gutters (90% → 95%) so gutters + shell pad don’t stack so hard. */
-@media (max-width: 40rem) {
+@media (min-width: 40rem) {
   :root,
   :host {
-    --haz_measure: min(45rem, 95%);
+    --haz_measure: min(45rem, 90%);
   }
 }
 
