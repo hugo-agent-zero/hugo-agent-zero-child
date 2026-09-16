@@ -84,7 +84,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
 .haz_header_site__brand {
   display: flex;
   align-items: center;
-  max-width: 50vw; /* child tweak — wordmark room vs controls; revisit per brand art */
+  max-width: 53vw; /* child tweak — wordmark room vs controls; revisit per brand art */
   min-width: 0;
   color: var(--haz_chrome);
 }
