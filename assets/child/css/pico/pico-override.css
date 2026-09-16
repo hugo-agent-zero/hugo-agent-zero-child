@@ -462,10 +462,13 @@ p.haz_tagline {
   - --haz_measure_type: starts equal to sweet; move it to change delta
   - layout --haz_measure may stay min(rem, %) for now (separate knob)
   - min: always 100% (browser base)
-  - val: 0.9rem + 0.35vw — NOT * delta (so narrow viewports can still sit near ~16px)
+  - --haz_font_vw: fluid slope (length). Default here 0.375vw (slightly roomier than
+    the old 0.35vw magic). Dial down toward 0.35vw / 0.3vw for a tighter look;
+    dial up (e.g. 0.4vw) for larger preferred type. Docs will cover this knob.
+  - val: 0.9rem + var(--haz_font_vw) — NOT * delta (narrow can still sit near ~16px)
   - max: 112.5% * delta — ceiling tracks type vs sweet
-  - vw kept so preferred can still climb toward max on wide viewports; if max feels
-    unused after this try, next knob is steeper vw / some delta on val / higher 112.5%
+  - if max feels unused after this try, next knob is steeper --haz_font_vw /
+    some delta on val / higher 112.5%
   - re-assert at Pico breakpoints (cleanup later if redundant)
   =============================================================================
 */
@@ -474,7 +477,8 @@ p.haz_tagline {
   --haz_measure_sweet: 65ch;
   --haz_measure_type: 65ch;
   --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
-  --haz_font_val: calc(0.9rem + 0.35vw);
+  --haz_font_vw: 0.375vw;
+  --haz_font_val: calc(0.9rem + var(--haz_font_vw));
   --haz_font_max: calc(112.5% * var(--haz_measure_delta));
   --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
 }
