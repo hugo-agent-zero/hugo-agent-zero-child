@@ -282,11 +282,19 @@ p.haz_tagline {
   line-height: 1.25;
 }
 
-/* Socials (pre_footer) — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
-   Stays in measure column with body > * (#57); aligns with header panel socials. */
+/* Socials — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
+   Same horizontal inset as measure-shell content (main/aside), for both the header
+   panel instance and body-level pre_footer — do not move this to body > nav only. */
 .haz_socials {
   display: block;
   margin-block: 1rem;
+  padding-inline: calc(var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem)) * 0.5);
+}
+
+@media (min-width: 40rem) {
+  .haz_socials {
+    padding-inline: var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem));
+  }
 }
 
 .haz_socials__menu {
