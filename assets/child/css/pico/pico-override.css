@@ -9,16 +9,28 @@
    Child can also host a downloaded theme under this folder.
 */
 
-/* Site settings — tweak here first.
-   Baseline fluid type stays here. HQ #51 experiments live in the
-   “#51 sandbox” block at the END of this file (wins cascade). */
+/* Site settings — tweak here first */
 :root,
 :host {
   --haz_measure: min(45rem, 90%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
-  /* Sack Pico’s stepped root font-size ladder; scale smoothly from 16px to 18px. */
-  --pico-font-size: clamp(100%, 0.9rem + 0.35vw, 112.5%);
+
+  /*
+    #51 — measure as constant → fluid root type.
+    sweet/type both 65ch at rest → delta = 1.
+    min: 100% (browser base). val: 0.9rem + --haz_font_vw (no * delta).
+    max: 112.5% * delta. Lower --haz_font_vw → ~16px floor at a wider viewport.
+    Exercise delta: live-edit --haz_measure_type (e.g. 80ch / 40ch).
+    ch is the locked spine — do not silently revert to rem without Mark.
+  */
+  --haz_measure_sweet: 65ch;
+  --haz_measure_type: 65ch;
+  --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
+  --haz_font_vw: 0.33vw;
+  --haz_font_val: calc(0.9rem + var(--haz_font_vw));
+  --haz_font_max: calc(112.5% * var(--haz_measure_delta));
+  --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
 }
 
 /* Light pink primary is soft on white (~5.5:1). Darken for links/chrome (~7.9:1 AAA).
@@ -439,78 +451,5 @@ p.haz_tagline {
 .haz_details > :not(summary) {
   margin-block: 0.5rem 0;
   color: var(--pico-color);
-}
-
-/*
-  =============================================================================
-  #51 sandbox — measure vs 65ch → fluid root type (TRY / ITERATE HERE)
-  =============================================================================
-  WHERE: this file, AFTER the baseline Site settings :root (and after Pico loads
-  earlier in the stack). Later rules win → this block is the sandbox.
-
-  HOW TO USE:
-  - Tweak vars / clamp below; leave the baseline :root clamp alone.
-  - DevTools: inspect html / :root → this file → --pico-font-size / --haz_font_*.
-  - Kill switch: comment out this whole sandbox to fall back to baseline + Pico.
-  - Resting: sweet === type === 65ch → delta = 1.
-  - Exercise delta: live-edit --haz_measure_type away from sweet (e.g. 80ch / 40ch).
-  - If ch on :root misbehaves in a browser, note it — do not silently revert to rem
-    without Mark (ch is the locked spine for the HAZ tool).
-
-  FORMULA (this try — delta on max only):
-  - --haz_measure_sweet: 65ch (HAZ line-length spine; tracks font’s 0 glyph)
-  - --haz_measure_type: starts equal to sweet; move it to change delta
-  - layout --haz_measure may stay min(rem, %) for now (separate knob)
-  - min: always 100% (browser base)
-  - --haz_font_vw: fluid slope (length). Default here 0.33vw (tighter than the old
-    0.35vw magic / prior 0.375vw try). Lower → floor (~16px) hits at a wider
-    viewport; higher → roomier preferred / later floor. Docs will cover this knob.
-  - val: 0.9rem + var(--haz_font_vw) — NOT * delta (narrow can still sit near ~16px)
-  - max: 112.5% * delta — ceiling tracks type vs sweet
-  - if max feels unused after this try, next knob is steeper --haz_font_vw /
-    some delta on val / higher 112.5%
-  - re-assert at Pico breakpoints (cleanup later if redundant)
-  =============================================================================
-*/
-:root,
-:host {
-  --haz_measure_sweet: 65ch;
-  --haz_measure_type: 65ch;
-  --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
-  --haz_font_vw: 0.33vw;
-  --haz_font_val: calc(0.9rem + var(--haz_font_vw));
-  --haz_font_max: calc(112.5% * var(--haz_measure_delta));
-  --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
-}
-
-@media (min-width: 576px) {
-  :root,
-  :host {
-    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
-  }
-}
-@media (min-width: 768px) {
-  :root,
-  :host {
-    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
-  }
-}
-@media (min-width: 1024px) {
-  :root,
-  :host {
-    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
-  }
-}
-@media (min-width: 1280px) {
-  :root,
-  :host {
-    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
-  }
-}
-@media (min-width: 1536px) {
-  :root,
-  :host {
-    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
-  }
 }
 
