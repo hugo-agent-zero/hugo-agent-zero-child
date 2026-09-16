@@ -1154,7 +1154,7 @@ atoms:
       part:
         file: haz/atomic/atoms/tag_tag_wrapper.html
       props:
-        tag: section
+        tag: aside
         attrs:
           class: haz_section haz_section--faq
           aria:

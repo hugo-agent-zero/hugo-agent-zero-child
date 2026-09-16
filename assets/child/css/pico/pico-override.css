@@ -274,12 +274,11 @@ p.haz_tagline {
   line-height: 1.25;
 }
 
-/* Socials (pre_footer) — FA Free SVGs via CSS mask + data-haz_icon (no webfonts) */
+/* Socials (pre_footer) — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
+   Horizontal inset: core pico-x body > nav (#57). */
 .haz_socials {
   display: block;
   margin-block: 1rem;
-  /* Match Pico block horizontal inset so space-between isn't flush to measure edges */
-  padding-inline: var(--pico-block-spacing-horizontal, var(--pico-spacing, 1rem));
 }
 
 .haz_socials__menu {
