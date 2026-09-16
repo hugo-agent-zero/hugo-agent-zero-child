@@ -107,7 +107,7 @@ multipliers:
       - meta_og_audio
       - meta_og_global
       - meta_apple_basic
-      - meta_apple_global
+      - meta_web_app_global
       - links_apple
       - meta_twitter
       - verification
@@ -157,11 +157,11 @@ multipliers:
         level: atoms
         group: head_tags
         inst: meta_apple_basic_000
-      meta_apple_global:
+      meta_web_app_global:
         enabled: true
         level: atoms
         group: head_tags
-        inst: meta_apple_global_000
+        inst: meta_web_app_global_000
       links_apple:
         enabled: true
         level: atoms
