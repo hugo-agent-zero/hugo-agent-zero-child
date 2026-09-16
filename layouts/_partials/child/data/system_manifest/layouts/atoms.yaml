@@ -1374,7 +1374,24 @@ atoms:
     children:
       enabled_false:
         enabled: false
-        child: skip_to_main_000_false
+        inst: todo
+  # Parked on purpose (not dead noise): demo Pico→Simple switch.
+  # To try Simple: rename this key to framework_css_simple_css (drop leading _)
+  # and set multipliers head_main → framework_css.inst to that key.
+  # Live graph stays framework_css_pico_css.
+  _framework_css_simple_css:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/framework_css.html
+    props:
+      css:
+        1_main: css/simple/simple.min.css
+        2_extended: css/simple/simple-extended.css
+        3_overrides: child/css/simple/simple-override.css
+    children:
+      enabled_false:
+        enabled: false
+        child: framework_css_simple_css_false
         level: atoms
         inst: todo
   framework_css_pico_css:
