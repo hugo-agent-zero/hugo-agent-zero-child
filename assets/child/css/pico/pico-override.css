@@ -9,7 +9,9 @@
    Child can also host a downloaded theme under this folder.
 */
 
-/* Site settings — tweak here first */
+/* Site settings — tweak here first.
+   Baseline fluid type stays here. HQ #51 experiments live in the
+   “#51 sandbox” block at the END of this file (wins cascade). */
 :root,
 :host {
   --haz_measure: min(45rem, 90%);
@@ -438,3 +440,64 @@ p.haz_tagline {
   margin-block: 0.5rem 0;
   color: var(--pico-color);
 }
+
+/*
+  =============================================================================
+  #51 sandbox — measure vs ~65ch → fluid root type (TRY / ITERATE HERE)
+  =============================================================================
+  WHERE: this file, AFTER the baseline Site settings :root (and after Pico loads
+  earlier in the stack). Later rules win → this block is the sandbox.
+
+  HOW TO USE:
+  - Tweak vars / clamp below; leave the baseline :root clamp alone.
+  - DevTools: inspect html / :root → this file → --pico-font-size / --haz_font_*.
+  - Kill switch: comment out this whole sandbox to fall back to baseline + Pico.
+
+  FORMULA (first guess — expect to be wrong; adjust freely):
+  - sweet ≈ 65ch as 32.5rem (65 × ~0.5em) so length math stays valid
+  - --haz_measure_type = rem knob for type (layout --haz_measure may stay min(rem,%))
+  - min always 100% (browser base); val + max follow delta both ways
+  - re-assert at Pico breakpoints so their stepped --pico-font-size cannot win
+  =============================================================================
+*/
+:root,
+:host {
+  --haz_measure_sweet: 32.5rem;
+  --haz_measure_type: 45rem;
+  --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
+  --haz_font_val: calc((0.9rem + 0.35vw) * var(--haz_measure_delta));
+  --haz_font_max: calc(112.5% * var(--haz_measure_delta));
+  --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+}
+
+@media (min-width: 576px) {
+  :root,
+  :host {
+    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+  }
+}
+@media (min-width: 768px) {
+  :root,
+  :host {
+    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+  }
+}
+@media (min-width: 1024px) {
+  :root,
+  :host {
+    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+  }
+}
+@media (min-width: 1280px) {
+  :root,
+  :host {
+    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+  }
+}
+@media (min-width: 1536px) {
+  :root,
+  :host {
+    --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+  }
+}
+
