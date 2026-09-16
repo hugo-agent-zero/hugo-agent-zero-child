@@ -275,7 +275,7 @@ p.haz_tagline {
 }
 
 /* Socials (pre_footer) — FA Free SVGs via CSS mask + data-haz_icon (no webfonts).
-   Horizontal inset: core pico-x body > nav (#57). */
+   Measure width: core pico-x .haz_socials with header/footer chrome (#57). */
 .haz_socials {
   display: block;
   margin-block: 1rem;
