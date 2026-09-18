@@ -46,3 +46,35 @@ settings:
       delimiter: ", "
       rel: tag
       row_partial: haz/helpers/fn/fn_list_row_link_000
+  images:
+    config:
+      variant_sep: "_"
+      class_prefix: "haz_img__"
+      # Layout / sizes still use rem (aligned with --haz_measure ceiling).
+      content_width: "45rem"
+      breakpoints:
+        desktop: "(min-width: 45rem)"
+      # Ideal measure in px at rem ceiling — from DevTools (not 45×16).
+      # Drives srcset Nw only. Author exports may round up (200/400/600/800/…) for KISS.
+      content_width_px: 775
+    # Variant keys = suffixes; Nw = round(content_width_px × factor).
+    # At 775: xs 194, sm 388, md 581, lg 775, xl 1163, xxl 1550.
+    variants:
+      xs: 0.25
+      sm: 0.5
+      md: 0.75
+      lg: 1.0
+      xl: 1.5
+      xxl: 2.0
+    # Preset keys are mnemonic ids (convention: desktop_mobile % of measure).
+    # Lookup only — shortcode does not parse the digits. sizes + class are explicit.
+    presets:
+      "100_100":
+        sizes: "(min-width: 45rem) 45rem, 95vw"
+        class: haz_img__100_100
+      "50_50":
+        sizes: "(min-width: 45rem) 22.5rem, 47.5vw"
+        class: haz_img__50_50
+      "25_25":
+        sizes: "(min-width: 45rem) 11.25rem, 23.75vw"
+        class: haz_img__25_25
