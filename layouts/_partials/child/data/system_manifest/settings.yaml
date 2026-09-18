@@ -70,11 +70,13 @@ settings:
     # Lookup only — shortcode does not parse the digits. sizes + class are explicit.
     presets:
       "100_100":
-        sizes: "(min-width: 45rem) 45rem, 95vw"
+        # Below measure ceiling: ~full viewport (gutters are small; 100vw avoids under-fetch).
+        # At ceiling: cap at content_width (tracks --haz_measure rem).
+        sizes: "(min-width: 45rem) 45rem, 100vw"
         class: haz_img__100_100
       "50_50":
-        sizes: "(min-width: 45rem) 22.5rem, 47.5vw"
+        sizes: "(min-width: 45rem) 22.5rem, 50vw"
         class: haz_img__50_50
       "25_25":
-        sizes: "(min-width: 45rem) 11.25rem, 23.75vw"
+        sizes: "(min-width: 45rem) 11.25rem, 25vw"
         class: haz_img__25_25
