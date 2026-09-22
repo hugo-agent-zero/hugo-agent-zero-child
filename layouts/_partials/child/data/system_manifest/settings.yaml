@@ -52,8 +52,10 @@ settings:
       class_prefix: "haz_img__"
       # Layout / sizes still use rem (aligned with --haz_measure ceiling).
       content_width: "45rem"
+      # Layout BPs as fraction of content_width (code emits rem for sizes/CSS).
+      # begin_desktop ≈ 0.89 → ~40rem when measure is 45rem. later: begin_tablet.
       breakpoints:
-        desktop: "(min-width: 45rem)"
+        begin_desktop: 0.89
       # Ideal measure in px at rem ceiling — from DevTools (not 45×16).
       # Drives srcset Nw only. Author exports may round up (200/400/600/800/…) for KISS.
       content_width_px: 775
@@ -71,19 +73,19 @@ settings:
     # does not parse segments. sizes + class are explicit.
     presets:
       "m100_d100":
-        # Below measure ceiling: ~full viewport (gutters are small; 100vw avoids under-fetch).
-        # At ceiling: cap at content_width (tracks --haz_measure rem).
-        sizes: "(min-width: 45rem) 45rem, 100vw"
+        # Below begin_desktop: ~full viewport (100vw avoids under-fetch).
+        # At/above: cap hole at content_width (measure). MQ rem = begin_desktop × measure (hand 40rem until code emits).
+        sizes: "(min-width: 40rem) 45rem, 100vw"
         class: haz_img__m100_d100
       "m50_d50":
-        sizes: "(min-width: 45rem) 22.5rem, 50vw"
+        sizes: "(min-width: 40rem) 22.5rem, 50vw"
         class: haz_img__m50_d50
       "m25_d25":
-        sizes: "(min-width: 45rem) 11.25rem, 25vw"
+        sizes: "(min-width: 40rem) 11.25rem, 25vw"
         class: haz_img__m25_d25
       "m100_d50":
-        sizes: "(min-width: 45rem) 22.5rem, 100vw"
+        sizes: "(min-width: 40rem) 22.5rem, 100vw"
         class: haz_img__m100_d50
       "m100_d75":
-        sizes: "(min-width: 45rem) 33.75rem, 100vw"
+        sizes: "(min-width: 40rem) 33.75rem, 100vw"
         class: haz_img__m100_d75
