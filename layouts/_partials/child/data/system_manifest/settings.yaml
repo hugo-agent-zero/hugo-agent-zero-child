@@ -49,6 +49,8 @@ settings:
   haz_img:
     config:
       variant_sep: "_"
+      # Most pictures wait. Set false on the shortcode for a hero: lazy=false.
+      default_lazy: true
       # How-wide spine (export lg / desktop sizes). Not the BPs.
       content_width: "68ch"
       rem_px: 16
