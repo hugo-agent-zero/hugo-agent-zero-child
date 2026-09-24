@@ -13,7 +13,7 @@
    This is screen-edge → measure column, not padding inside main/aside. */
 :root,
 :host {
-  --haz_measure: min(45rem, 95%);
+  --haz_measure: min(55rem, 95%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
 
@@ -37,7 +37,7 @@
 @media (min-width: 40rem) {
   :root,
   :host {
-    --haz_measure: min(45rem, 90%);
+    --haz_measure: min(55rem, 90%);
   }
 }
 
