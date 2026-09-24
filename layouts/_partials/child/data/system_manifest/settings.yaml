@@ -52,7 +52,7 @@ settings:
       # How-wide spine (export lg / desktop sizes). Not the BPs.
       content_width: "55rem"
       rem_px: 16
-      content_width_px: 990
+      content_width_px: 1105
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
       # When (viewport px). Pico md / lg — not fractions of measure.
