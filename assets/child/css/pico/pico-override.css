@@ -19,10 +19,12 @@
 
   /*
     #51 — measure as constant → fluid root type.
-    sweet stays 65ch (comfortable line). type 80ch ≈ 55/45 × 65 so a
-    wider column gets a larger fluid max (delta > 1).
-    min: 100% (browser base). val: 0.9rem + --haz_font_vw (no * delta).
-    max: 112.5% * delta. Exercise delta: live-edit --haz_measure_type.
+    --haz_measure_sweet is the sweet spot for THE FONT (this typeface’s
+    comfortable line, usually ~65ch). Change the face → you may need a
+    new sweet. Ideally the fluid formula still holds (delta = type/sweet).
+    type 80ch ≈ 55/45 × 65 so a wider column gets a larger fluid max.
+    min: 100%. val: 0.9rem + --haz_font_vw (no * delta).
+    max: 112.5% * delta. Exercise: live-edit --haz_measure_type.
     ch is the locked spine — do not silently revert to rem without Mark.
   */
   --haz_measure_sweet: 65ch;
