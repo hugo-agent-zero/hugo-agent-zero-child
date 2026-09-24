@@ -22,13 +22,14 @@
     comfortable line, usually ~65ch). Change the face → you may need a
     new sweet. Ideally the fluid formula still holds (delta = type/sweet).
     Column uses sweet (ch), not rem — rem scaled with the font and kept ~110 chars.
-    type 80ch only grows the fluid max. Line length is sweet.
+    type 100ch grows the fluid max (~20px felt small; 65ch box
+    needs a larger face to sit north of min_desktop 992). Line length is sweet.
     min: 100%. val: 0.9rem + --haz_font_vw (no * delta).
     max: 112.5% * delta. Exercise: live-edit --haz_measure_type.
     ch is the locked spine — do not silently revert to rem without Mark.
   */
   --haz_measure_sweet: 65ch;
-  --haz_measure_type: 80ch;
+  --haz_measure_type: 100ch;
   --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
   --haz_measure: min(var(--haz_measure_sweet), 95%);
   --haz_font_vw: 0.33vw;
