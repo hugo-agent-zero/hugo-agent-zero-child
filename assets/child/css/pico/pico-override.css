@@ -9,8 +9,8 @@
    Child can also host a downloaded theme under this folder.
 */
 
-/* #57 — mobile-first: tighter outside gutters (95%); 90% from 40rem up.
-   Column is ch (sweet), not rem — rem grew with the font and kept ~110 chars/line. */
+/* #57 — mobile-first: tighter outside gutters (95%); 90% from min_tablet (768px).
+   Stamp the px — rem MQs drift with fluid type. Column is ch (sweet), not rem. */
 :root,
 :host {
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
@@ -36,7 +36,7 @@
   --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 768px) {
   :root,
   :host {
     --haz_measure: min(var(--haz_measure_sweet), 90%);
@@ -234,7 +234,7 @@ p.haz_tagline {
   min-width: 0;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 767px) {
   .haz_footer_site > div:first-child {
     flex-direction: column;
     align-items: center;
