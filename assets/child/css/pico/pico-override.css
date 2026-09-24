@@ -19,14 +19,14 @@
 
   /*
     #51 — measure as constant → fluid root type.
-    sweet/type both 65ch at rest → delta = 1.
+    sweet stays 65ch (comfortable line). type 80ch ≈ 55/45 × 65 so a
+    wider column gets a larger fluid max (delta > 1).
     min: 100% (browser base). val: 0.9rem + --haz_font_vw (no * delta).
-    max: 112.5% * delta. Lower --haz_font_vw → ~16px floor at a wider viewport.
-    Exercise delta: live-edit --haz_measure_type (e.g. 80ch / 40ch).
+    max: 112.5% * delta. Exercise delta: live-edit --haz_measure_type.
     ch is the locked spine — do not silently revert to rem without Mark.
   */
   --haz_measure_sweet: 65ch;
-  --haz_measure_type: 65ch;
+  --haz_measure_type: 80ch;
   --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
   --haz_font_vw: 0.33vw;
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
