@@ -52,12 +52,12 @@ settings:
       # How-wide spine (export lg / desktop sizes). Not the BPs.
       content_width: "45rem"
       rem_px: 16
-      content_width_px: 775
+      content_width_px: 810
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
       # When (viewport px). Pico md / lg — not fractions of measure.
       breakpoints:
         min_tablet: 768
         min_desktop: 992
-    # How-wide: sm ≈ 90% of (768−1) capped at lg; md ≈ 90% of (992−1) capped at lg;
-    # lg = content_width_px; xs = ½ sm; xl/xxl = 1.5/2× lg. HQ skill: haz-img-exports.
+    # How-wide: lg = min(content_width_px, min_desktop). sm/md = 90% of (BP−1) capped at lg.
+    # xs = ½ sm; xl/xxl = 1.5/2× lg. HQ skill: haz-img-exports.
