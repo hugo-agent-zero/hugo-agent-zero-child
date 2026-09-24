@@ -56,7 +56,10 @@ settings:
       content_width_px: 1065
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
-      # When (viewport px). Pico md / lg — not fractions of measure.
+      # When (viewport px). Copied from the CSS library — not from measure.
+      # HAZ default = Pico md / lg (768 / 992). Pico is our opinion, not a lock:
+      # swap the library → restamp these and the matching CSS @media literals.
+      # https://picocss.com/docs
       breakpoints:
         min_tablet: 768
         min_desktop: 992
