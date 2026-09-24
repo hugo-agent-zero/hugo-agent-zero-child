@@ -21,18 +21,18 @@
     --haz_measure_sweet is the sweet spot for THE FONT (this typeface’s
     comfortable line). Change the face → you may need a new sweet.
     Column uses sweet (ch), not rem. type / font_vw grow the fluid size.
-    Eyes-on: sweet 68ch, type 90ch, font_vw 0.75vw.
+    Eyes-on: sweet 68ch, type 100ch, font_vw 0.75vw, max 102.5% * delta
+    (was 112.5% — desktop felt a bit large).
     min: 100%. val: 0.9rem + --haz_font_vw (no * delta).
-    max: 112.5% * delta. Exercise: live-edit --haz_measure_type.
     ch is the locked spine — do not silently revert to rem without Mark.
   */
   --haz_measure_sweet: 68ch;
-  --haz_measure_type: 90ch;
+  --haz_measure_type: 100ch;
   --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
   --haz_measure: min(var(--haz_measure_sweet), 95%);
   --haz_font_vw: 0.75vw;
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
-  --haz_font_max: calc(112.5% * var(--haz_measure_delta));
+  --haz_font_max: calc(102.5% * var(--haz_measure_delta));
   --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
 }
 
