@@ -10,10 +10,9 @@
 */
 
 /* #57 — mobile-first: tighter outside gutters (95%); 90% from 40rem up.
-   This is screen-edge → measure column, not padding inside main/aside. */
+   Column is ch (sweet), not rem — rem grew with the font and kept ~110 chars/line. */
 :root,
 :host {
-  --haz_measure: min(55rem, 95%);
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
 
@@ -22,7 +21,8 @@
     --haz_measure_sweet is the sweet spot for THE FONT (this typeface’s
     comfortable line, usually ~65ch). Change the face → you may need a
     new sweet. Ideally the fluid formula still holds (delta = type/sweet).
-    type 80ch ≈ 55/45 × 65 so a wider column gets a larger fluid max.
+    Column uses sweet (ch), not rem — rem scaled with the font and kept ~110 chars.
+    type 80ch only grows the fluid max. Line length is sweet.
     min: 100%. val: 0.9rem + --haz_font_vw (no * delta).
     max: 112.5% * delta. Exercise: live-edit --haz_measure_type.
     ch is the locked spine — do not silently revert to rem without Mark.
@@ -30,6 +30,7 @@
   --haz_measure_sweet: 65ch;
   --haz_measure_type: 80ch;
   --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
+  --haz_measure: min(var(--haz_measure_sweet), 95%);
   --haz_font_vw: 0.33vw;
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
   --haz_font_max: calc(112.5% * var(--haz_measure_delta));
@@ -39,7 +40,7 @@
 @media (min-width: 40rem) {
   :root,
   :host {
-    --haz_measure: min(55rem, 90%);
+    --haz_measure: min(var(--haz_measure_sweet), 90%);
   }
 }
 

@@ -50,8 +50,9 @@ settings:
     config:
       variant_sep: "_"
       # How-wide spine (export lg / desktop sizes). Not the BPs.
-      content_width: "55rem"
+      content_width: "65ch"
       rem_px: 16
+      # Stale until Inspect after ch column — was 1105 at 55rem.
       content_width_px: 1105
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
