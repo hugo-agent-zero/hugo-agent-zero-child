@@ -91,5 +91,41 @@ settings:
         ratio: "1/1"
         fit: cover
         class: haz_float_right
+      desk_half_left:
+        term: Full then half left
+        m: 100
+        t: 100
+        d: 50
+        ratio: "16/9"
+        fit: cover
+        class: haz_float_left
+      quarter_right:
+        term: Quarter right
+        m: 25
+        t: 25
+        d: 25
+        ratio: "1/1"
+        fit: cover
+        class: haz_float_right
+      mid_center:
+        term: Mid centered
+        m: 75
+        t: 50
+        d: 75
+        ratio: "4/3"
+        fit: cover
+        class: haz_img_center
+      as_is:
+        term: As is
+        m: 100
+        t: 100
+        d: 100
+      story_tall:
+        term: Tall
+        m: 100
+        t: 100
+        d: 100
+        ratio: "3/4"
+        fit: cover
     # How-wide: lg = content_width_px (the column). Not capped at min_desktop.
     # sm/md = 90% of (BP−1) capped at lg. xs = ½ sm; xl/xxl = 1.5/2× lg.
