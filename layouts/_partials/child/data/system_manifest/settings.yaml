@@ -65,68 +65,66 @@ settings:
       breakpoints:
         min_tablet: 768
         min_desktop: 992
-    # Mom types these names. Engine (m/t/d, ratio, fit, align) stays here.
-    # ratio is as-is CSS. class is an open extra-class string.
-    # m_align / t_align / d_align: left|right|center|none. Blank inherits.
+    # Mom types these names. Engine (m/t/d, ratio, fit) stays here.
+    # Each band is a map: w (25|50|75|100), align (left|right|center|none).
+    # Omit a band or field → inherit the one above. class is leftovers.
     presets:
       story_wide:
         term: Wide
-        m: 100
-        t: 100
-        d: 100
         ratio: "16/9"
         fit: cover
+        m:
+          w: 100
       half_sqr_left:
         term: Half square left
-        m: 50
-        t: 50
-        d: 50
         ratio: "1/1"
         fit: cover
-        m_align: left
+        m:
+          w: 50
+          align: left
       half_sqr_right:
         term: Half square right
-        m: 50
-        t: 50
-        d: 50
         ratio: "1/1"
         fit: cover
-        m_align: right
+        m:
+          w: 50
+          align: right
       desk_half_left:
         term: Full then half left
-        m: 100
-        t: 100
-        d: 50
         ratio: "16/9"
         fit: cover
-        d_align: left
+        m:
+          w: 100
+        d:
+          w: 50
+          align: left
       quarter_right:
         term: Quarter right
-        m: 25
-        t: 25
-        d: 25
         ratio: "1/1"
         fit: cover
-        m_align: right
+        m:
+          w: 25
+          align: right
       mid_center:
         term: Mid centered
-        m: 75
-        t: 50
-        d: 75
         ratio: "4/3"
         fit: cover
-        m_align: center
+        m:
+          w: 75
+          align: center
+        t:
+          w: 50
+        d:
+          w: 75
       as_is:
         term: As is
-        m: 100
-        t: 100
-        d: 100
+        m:
+          w: 100
       story_tall:
         term: Tall
-        m: 100
-        t: 100
-        d: 100
         ratio: "3/4"
         fit: cover
+        m:
+          w: 100
     # How-wide: lg = content_width_px (the column). Not capped at min_desktop.
     # sm/md = 90% of (BP−1) capped at lg. xs = ½ sm; xl/xxl = 1.5/2× lg.
