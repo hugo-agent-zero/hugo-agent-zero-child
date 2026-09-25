@@ -65,8 +65,9 @@ settings:
       breakpoints:
         min_tablet: 768
         min_desktop: 992
-    # Mom types these names. Engine (m/t/d, ratio, fit) stays here.
+    # Mom types these names. Engine (m/t/d, ratio, fit, align) stays here.
     # ratio is as-is CSS. class is an open extra-class string.
+    # m_align / t_align / d_align: left|right|center|none. Blank inherits.
     presets:
       story_wide:
         term: Wide
@@ -82,7 +83,7 @@ settings:
         d: 50
         ratio: "1/1"
         fit: cover
-        class: haz_float_left
+        m_align: left
       half_sqr_right:
         term: Half square right
         m: 50
@@ -90,7 +91,7 @@ settings:
         d: 50
         ratio: "1/1"
         fit: cover
-        class: haz_float_right
+        m_align: right
       desk_half_left:
         term: Full then half left
         m: 100
@@ -98,7 +99,7 @@ settings:
         d: 50
         ratio: "16/9"
         fit: cover
-        class: haz_float_left
+        d_align: left
       quarter_right:
         term: Quarter right
         m: 25
@@ -106,7 +107,7 @@ settings:
         d: 25
         ratio: "1/1"
         fit: cover
-        class: haz_float_right
+        m_align: right
       mid_center:
         term: Mid centered
         m: 75
@@ -114,7 +115,7 @@ settings:
         d: 75
         ratio: "4/3"
         fit: cover
-        class: haz_img_center
+        m_align: center
       as_is:
         term: As is
         m: 100
