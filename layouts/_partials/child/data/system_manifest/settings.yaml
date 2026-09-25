@@ -65,5 +65,31 @@ settings:
       breakpoints:
         min_tablet: 768
         min_desktop: 992
+    # Mom types these names. Engine (m/t/d, ratio, fit) stays here.
+    # ratio is as-is CSS. class is an open extra-class string.
+    presets:
+      story_wide:
+        term: Wide
+        m: 100
+        t: 100
+        d: 100
+        ratio: "16/9"
+        fit: cover
+      half_sqr_left:
+        term: Half square left
+        m: 50
+        t: 50
+        d: 50
+        ratio: "1/1"
+        fit: cover
+        class: haz_float_left
+      half_sqr_right:
+        term: Half square right
+        m: 50
+        t: 50
+        d: 50
+        ratio: "1/1"
+        fit: cover
+        class: haz_float_right
     # How-wide: lg = content_width_px (the column). Not capped at min_desktop.
     # sm/md = 90% of (BP−1) capped at lg. xs = ½ sm; xl/xxl = 1.5/2× lg.
