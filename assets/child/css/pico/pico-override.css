@@ -20,16 +20,19 @@
     A: --haz_measure_px — ultrawide stops here. Same as haz_img content_width_px.
     Gutter mobile-first: 95% in :root; 90% from min_desktop (992).
 
-    Two font bands (one slope across phone→ultrawide never cut it):
-    Below 992: C 100% → ~18px (112.5%). 0.35vw. Floor ~16 near ~450px.
-    From 992: hold ~18 as min; B is size at A (1065/0.9 ≈ 1183). First
-    guess 125% (~20px) with 0.47vw so max lands with measure max. Nudge B.
-    65 is a desktop target; phone lines go short.
+    Two font bands — tune each max with a named var:
+    --haz_font_max_tablet  = max below min_desktop (also desktop band min).
+    --haz_font_max_desktop = max from min_desktop; size at A (~1183 with 90%).
+    Below 992: C 100% → tablet max (~18). 0.35vw.
+    From 992: tablet max → desktop max (~24). 0.81vw so max lands at A.
+    65 is a desktop target; phone lines go short. Nudge --haz_font_max_desktop.
   */
   --haz_measure_px: 1065px;
   --haz_measure: min(var(--haz_measure_px), 95%);
+  --haz_font_max_tablet: 112.5%;
+  --haz_font_max_desktop: 150%;
   --haz_font_min: 100%;
-  --haz_font_max: 112.5%;
+  --haz_font_max: var(--haz_font_max_tablet);
   --haz_font_vw: 0.35vw;
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
   --pico-font-size: clamp(var(--haz_font_min), var(--haz_font_val), var(--haz_font_max));
@@ -39,9 +42,9 @@
   :root,
   :host {
     --haz_measure: min(var(--haz_measure_px), 90%);
-    --haz_font_min: 112.5%;
-    --haz_font_max: 125%;
-    --haz_font_vw: 0.47vw;
+    --haz_font_min: var(--haz_font_max_tablet);
+    --haz_font_max: var(--haz_font_max_desktop);
+    --haz_font_vw: 0.81vw;
   }
 }
 
