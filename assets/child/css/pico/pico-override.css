@@ -22,7 +22,7 @@
 
     Two fluid-type clamps (calculator). Same curve for headlines via rem of root.
     Band 1 (default): 1rem @ ~320 → 1.125rem @ ~992.
-    Band 2 (993+): 1.125rem @ ~993 → 1.3rem @ ~1183 (A). Seam = no cliff.
+    Band 2 (992+): 1.125rem @ ~992 → 1.3rem @ ~1183 (A). Seam = no cliff.
     Headings stay rem of --pico-font-size. Retune = re-run the calculator.
   */
   --haz_measure_px: 1065px;
@@ -35,12 +35,6 @@
   :root,
   :host {
     --haz_measure: min(var(--haz_measure_px), 90%);
-  }
-}
-
-@media (min-width: 993px) {
-  :root,
-  :host {
     --pico-font-size: 1.125rem;
     --pico-font-size: clamp(1.125rem, 0.2104rem + 1.4737vw, 1.3rem);
   }
