@@ -134,7 +134,7 @@ molecules:
             haz_shortcode: page
         slots:
           - tag: p
-            content: Shortcode key=page
+            content: Shortcode name=page
       children:
         enabled_false:
           enabled: false
@@ -152,7 +152,7 @@ molecules:
             haz_shortcode: blog
         slots:
           - tag: p
-            content: Shortcode key=blog
+            content: Shortcode name=blog
       children:
         enabled_false:
           enabled: false
@@ -171,7 +171,7 @@ molecules:
             haz_shortcode_route: demo_post_2
         slots:
           - tag: p
-            content: Shortcode key=blog single=demo-post-2
+            content: Shortcode name=blog single=demo-post-2
       children:
         enabled_false:
           enabled: false
