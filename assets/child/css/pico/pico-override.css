@@ -10,36 +10,34 @@
 */
 
 /* #57 — mobile-first: tighter outside gutters (95%); 90% from min_tablet (768px).
-   Stamp the px — rem MQs drift with fluid type. Column is ch (sweet), not rem. */
+   Stamp the px — rem MQs drift with fluid type. */
 :root,
 :host {
   /* One chrome pink for text + SVG fill (Pico’s --pico-primary, not --pico-primary-background). */
   --haz_chrome: var(--pico-primary);
 
   /*
-    #51 — measure as constant → fluid root type.
-    --haz_measure_sweet is the sweet spot for THE FONT (this typeface’s
-    comfortable line). Change the face → you may need a new sweet.
-    Column uses sweet (ch), not rem. type / font_vw grow the fluid size.
-    Eyes-on: sweet 68ch, type 100ch, font_vw 0.75vw, max 102.5% * delta
-    (was 112.5% — desktop felt a bit large).
-    min: 100%. val: 0.9rem + --haz_font_vw (no * delta).
-    ch is the locked spine — do not silently revert to rem without Mark.
+    #70 — column is the input (px). Font is the output for OUR face.
+    A: --haz_measure_px — ultrawide stops here. Same number as haz_img
+       content_width_px (Inspect column). Not ch.
+    B: --haz_font_max — size that puts ~65 of a letter/digit sample in A.
+       Guess, look, nudge. Swap the face → retune A/B.
+    C: --haz_font_min — 100%; reader default wins.
+    Clamp is only C→B. 65 is a desktop target; phone lines go short.
   */
-  --haz_measure_sweet: 68ch;
-  --haz_measure_type: 100ch;
-  --haz_measure_delta: calc(var(--haz_measure_type) / var(--haz_measure_sweet));
-  --haz_measure: min(var(--haz_measure_sweet), 95%);
+  --haz_measure_px: 1065px;
+  --haz_measure: min(var(--haz_measure_px), 95%);
+  --haz_font_min: 100%;
+  --haz_font_max: 150%;
   --haz_font_vw: 0.75vw;
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
-  --haz_font_max: calc(102.5% * var(--haz_measure_delta));
-  --pico-font-size: clamp(100%, var(--haz_font_val), var(--haz_font_max));
+  --pico-font-size: clamp(var(--haz_font_min), var(--haz_font_val), var(--haz_font_max));
 }
 
 @media (min-width: 768px) {
   :root,
   :host {
-    --haz_measure: min(var(--haz_measure_sweet), 90%);
+    --haz_measure: min(var(--haz_measure_px), 90%);
   }
 }
 
