@@ -18,16 +18,18 @@
   /*
     Column is the input (px). Font is the output for OUR face.
     A: --haz_measure_px — ultrawide stops here. Same as haz_img content_width_px.
-    Gutter mobile-first: 95% in :root; 90% from min_desktop (992). Not min_tablet.
-    B: --haz_font_max — slope at the viewport where A wins on desktop
-       (1065 / 0.9 ≈ 1183px) with 0.35vw → ~18.5px ≈ 116%. Font max with measure max.
-    C: --haz_font_min — 100%. vw back to 0.35 (0.75 was the failed #51 nudge).
-    Clamp is only C→B. 65 is a desktop target; phone lines go short.
+    Gutter mobile-first: 95% in :root; 90% from min_desktop (992).
+
+    Two font bands (one slope across phone→ultrawide never cut it):
+    Below 992: C 100% → ~18px (112.5%). 0.35vw. Floor ~16 near ~450px.
+    From 992: hold ~18 as min; B is size at A (1065/0.9 ≈ 1183). First
+    guess 125% (~20px) with 0.47vw so max lands with measure max. Nudge B.
+    65 is a desktop target; phone lines go short.
   */
   --haz_measure_px: 1065px;
   --haz_measure: min(var(--haz_measure_px), 95%);
   --haz_font_min: 100%;
-  --haz_font_max: 116%;
+  --haz_font_max: 112.5%;
   --haz_font_vw: 0.35vw;
   --haz_font_val: calc(0.9rem + var(--haz_font_vw));
   --pico-font-size: clamp(var(--haz_font_min), var(--haz_font_val), var(--haz_font_max));
@@ -37,6 +39,9 @@
   :root,
   :host {
     --haz_measure: min(var(--haz_measure_px), 90%);
+    --haz_font_min: 112.5%;
+    --haz_font_max: 125%;
+    --haz_font_vw: 0.47vw;
   }
 }
 
