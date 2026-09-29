@@ -1414,10 +1414,11 @@ atoms:
       file: haz/atomic/atoms/framework_css.html
     props:
       css:
-        # #95: Simple + OP crayons; fonts = first child add-back (three roles).
+        # #95: Simple + OP crayons; fonts first child add-back; haz.css = core utils (.haz_sr_only etc).
         1_props: css/open-props/open-props.min.css
         2_simple: css/simple/simple.min.css
-        3_fonts: child/css/fonts.css
+        3_haz: css/haz/haz.css
+        4_fonts: child/css/fonts.css
     children:
       enabled_false:
         enabled: false
