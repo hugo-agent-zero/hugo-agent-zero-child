@@ -104,6 +104,15 @@ html[data-scrolled="true"] .haz_site_header .haz_brand__name {
   color: var(--haz_site_primary);
 }
 
+.haz_site_header__col_other .haz_btn:hover,
+.haz_site_header__col_other .haz_btn:focus-visible,
+.haz_site_header__col_other .haz_btn:enabled:hover {
+  background: none;
+  border: none;
+  color: var(--haz_site_primary_hover);
+  outline: none;
+}
+
 .haz_site_header__col_other .haz_btn svg {
   width: var(--size-5);
   height: var(--size-5);
@@ -191,6 +200,7 @@ html.haz_state__nav_open body > header {
   padding: 0;
   border: none;
   border-radius: 0;
+  background: none;
   color: var(--haz_site_primary);
   text-decoration: none;
   font-size: var(--font-size-4);
@@ -198,15 +208,20 @@ html.haz_state__nav_open body > header {
 }
 
 .haz_site_header #haz_nav_main a:hover,
-.haz_site_header #haz_nav_main a:focus-visible {
+.haz_site_header #haz_nav_main a:focus-visible,
+.haz_site_header #haz_nav_main a.current,
+.haz_site_header #haz_nav_main a[aria-current="page"],
+.haz_site_header #haz_nav_main a[aria-current="true"],
+.haz_site_header #haz_nav_main a.haz_is_active {
+  background: none;
+  border: none;
   color: var(--haz_site_primary_hover);
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
 
 .haz_site_header #haz_nav_main a.haz_is_active {
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
+  color: var(--haz_site_primary);
 }
 
 #haz_nav_main_panel .haz_socials {

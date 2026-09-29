@@ -44,8 +44,8 @@ html[data-theme="dark"] {
   color-scheme: dark;
   --haz_site_primary: var(--pink-5);
   --haz_site_primary_hover: var(--pink-3);
-  /* Simple: body uses --bg; header uses --accent-bg — header darker. */
-  --bg: var(--gray-10);
+  /* Simple: body uses --bg; header uses --accent-bg — header darker, body close. */
+  --bg: var(--gray-11);
   --accent-bg: var(--gray-12);
   --text: var(--gray-1);
   --text-light: var(--gray-4);
