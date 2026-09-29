@@ -153,17 +153,28 @@ html[data-theme="light"] #haz_btn_color_scheme svg.haz_svg__moon {
 }
 
 /* Nav panel — closed by default; html.haz_state__nav_open opens it.
-   Stack: nav → socials → tagline, centered. No max-height hack. */
+   Grid 0fr→1fr ease (needs __panel_inner overflow:hidden from core preset).
+   Stack: nav → socials → tagline, centered. */
 #haz_nav_main_panel {
-  display: none;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.28s ease, opacity 0.22s ease;
+}
+
+html.haz_state__nav_open #haz_nav_main_panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.haz_site_header__panel_inner {
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--size-3);
   padding-block: var(--size-3);
-}
-
-html.haz_state__nav_open #haz_nav_main_panel {
-  display: flex;
 }
 
 html.haz_state__nav_open body > header {
