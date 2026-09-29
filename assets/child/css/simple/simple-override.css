@@ -98,14 +98,14 @@ html.color-scheme video {
 }
 
 
-.haz_site_header__brand a {
+.haz_header_site__brand a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem; /* space between logo + wordmark */
   text-decoration: none;
 }
 
-html.color-scheme-dark .haz_site_header__brand svg{
+html.color-scheme-dark .haz_header_site__brand svg{
   fill: var(--accent)
 }
 
@@ -118,7 +118,7 @@ html.color-scheme-dark .haz_svg__brand_logo_fpo ellipse {
   stroke: var(--accent);
 }
 
-html.color-scheme-light .haz_site_header__brand svg{
+html.color-scheme-light .haz_header_site__brand svg{
   fill: var(--accent-text)
 }
 

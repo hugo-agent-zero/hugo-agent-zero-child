@@ -88,7 +88,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
   color: var(--haz_chrome);
 }
 
-.haz_site_header__brand {
+.haz_header_site__brand {
   display: flex;
   align-items: center;
   max-width: 53vw; /* child tweak — wordmark room vs controls; revisit per brand art */
@@ -96,7 +96,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
   color: var(--haz_chrome);
 }
 
-.haz_site_header__brand a {
+.haz_header_site__brand a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -106,7 +106,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
   min-width: 0;
 }
 
-.haz_site_header__brand svg {
+.haz_header_site__brand svg {
   fill: var(--haz_chrome);
   max-width: 100%;
 }
