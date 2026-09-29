@@ -103,7 +103,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
   color: var(--haz_chrome);
 }
 
-.haz_header_site__brand {
+.haz_site_header__brand {
   display: flex;
   align-items: center;
   max-width: 53vw;
@@ -111,7 +111,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
   color: var(--haz_chrome);
 }
 
-.haz_header_site__brand a {
+.haz_site_header__brand a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -121,7 +121,7 @@ html[data-theme="light"] .haz_svg__sun_000 {
   min-width: 0;
 }
 
-.haz_header_site__brand svg {
+.haz_site_header__brand svg {
   fill: var(--haz_chrome);
   max-width: 100%;
 }
