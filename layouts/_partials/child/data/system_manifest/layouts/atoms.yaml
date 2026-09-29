@@ -1414,9 +1414,10 @@ atoms:
       file: haz/atomic/atoms/framework_css.html
     props:
       css:
-        # Zero baseline (#95): Simple floor + OP crayons only. Re-add sheets fix-by-fix.
+        # #95: Simple + OP crayons; fonts = first child add-back (three roles).
         1_props: css/open-props/open-props.min.css
         2_simple: css/simple/simple.min.css
+        3_fonts: child/css/fonts.css
     children:
       enabled_false:
         enabled: false
