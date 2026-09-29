@@ -1,0 +1,58 @@
+/* Child: site skin — Simple theme knobs fed by Open Props + HAZ chrome.
+   Site-wide tokens live here (not in layouts chrome files like site_header.css). */
+
+:root {
+  --haz_chrome: #9d1945;
+  --haz_chrome_hover: #7a1438;
+
+  /* Simple ← OP crayons (light defaults) */
+  --bg: var(--gray-0);
+  --accent-bg: var(--gray-2);
+  --text: var(--gray-12);
+  --text-light: var(--gray-7);
+  --border: var(--gray-6);
+  --accent: var(--haz_chrome);
+  --accent-hover: var(--haz_chrome_hover);
+  --accent-text: var(--bg);
+  --code: var(--pink-8, #d81b60);
+  --preformatted: var(--gray-8);
+  --marked: var(--yellow-3, #ffdd33);
+  --disabled: var(--gray-3);
+}
+
+/* HAZ data-theme toggle (wins over Simple’s prefers-color-scheme / .dark) */
+html[data-theme="light"] {
+  color-scheme: light;
+  --haz_chrome: #9d1945;
+  --haz_chrome_hover: #7a1438;
+  --bg: var(--gray-0);
+  --accent-bg: var(--gray-2);
+  --text: var(--gray-12);
+  --text-light: var(--gray-7);
+  --border: var(--gray-6);
+  --accent: var(--haz_chrome);
+  --accent-hover: var(--haz_chrome_hover);
+  --accent-text: var(--bg);
+  --code: var(--pink-8, #d81b60);
+  --preformatted: var(--gray-8);
+  --marked: var(--yellow-3, #ffdd33);
+  --disabled: var(--gray-3);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --haz_chrome: #e85a8a;
+  --haz_chrome_hover: #f08aaa;
+  --bg: var(--gray-9);
+  --accent-bg: var(--gray-8);
+  --text: var(--gray-1);
+  --text-light: var(--gray-4);
+  --border: var(--gray-7);
+  --accent: var(--haz_chrome);
+  --accent-hover: var(--haz_chrome_hover);
+  --accent-text: var(--bg);
+  --code: var(--pink-3, #f06292);
+  --preformatted: var(--gray-4);
+  --marked: var(--yellow-3, #ffdd33);
+  --disabled: var(--gray-8);
+}

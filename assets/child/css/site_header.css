@@ -1,22 +1,7 @@
 /* Child: layout for this layouts site header (#95 add-back).
    Tied to the shipped DOM (two rows, brand / __col_other). Rebuild the header
-   in layouts → drop or replace this file; keep out of core. */
-
-/* Chrome tokens for this header (theme skin file can own globally later). */
-:root {
-  --haz_chrome: #9d1945;
-  --haz_chrome_hover: #7a1438;
-}
-
-html[data-theme="dark"] {
-  --haz_chrome: #e85a8a;
-  --haz_chrome_hover: #f08aaa;
-}
-
-html[data-theme="light"] {
-  --haz_chrome: #9d1945;
-  --haz_chrome_hover: #7a1438;
-}
+   in layouts → drop or replace this file; keep out of core.
+   Site-wide tokens (--haz_chrome, Simple knobs) live in theme.css. */
 
 body > header {
   padding-bottom: 0.5rem;

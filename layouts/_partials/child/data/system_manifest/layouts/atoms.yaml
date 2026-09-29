@@ -1414,12 +1414,13 @@ atoms:
       file: haz/atomic/atoms/framework_css.html
     props:
       css:
-        # #95: Simple + OP; haz.css utils; fonts; site_header layout (child — layouts-shaped).
+        # #95: OP props → Simple → haz utils → theme skin → fonts → layouts chrome.
         1_props: css/open-props/open-props.min.css
         2_simple: css/simple/simple.min.css
         3_haz: css/haz/haz.css
-        4_fonts: child/css/fonts.css
-        5_site_header: child/css/site_header.css
+        4_theme: child/css/theme.css
+        5_fonts: child/css/fonts.css
+        6_site_header: child/css/site_header.css
     children:
       enabled_false:
         enabled: false
