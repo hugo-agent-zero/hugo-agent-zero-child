@@ -4,14 +4,14 @@
    Site-wide tokens (--haz_site_primary, Simple knobs) live in theme.css. */
 
 body > header {
-  padding-bottom: 0.5rem;
+  padding-bottom: var(--size-2);
   position: sticky;
   top: 0;
   z-index: 200;
 }
 
 html[data-scrolled="true"] body > header {
-  padding-block: 0.5rem;
+  padding-block: var(--size-2);
 }
 
 .haz_site_header > div {
@@ -24,7 +24,7 @@ html[data-scrolled="true"] body > header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.75rem;
+  padding-block: var(--size-3);
 }
 
 html[data-scrolled="true"] .haz_site_header > div:first-child {
@@ -43,7 +43,7 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
 .haz_site_header__brand a {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--size-2);
   text-decoration: none;
   line-height: 0;
   max-width: 100%;
@@ -57,7 +57,7 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
 
 .haz_site_header .haz_svg {
   display: block;
-  height: 1rem;
+  height: var(--size-3);
   width: auto;
 }
 
@@ -69,11 +69,11 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
 }
 
 .haz_site_header .haz_brand__logo .haz_svg {
-  height: 2.175rem;
+  height: var(--size-7);
 }
 
 .haz_site_header .haz_brand__name .haz_svg {
-  height: 1.75rem;
+  height: var(--size-6);
 }
 
 html:not([data-scrolled="true"]) .haz_site_header .haz_brand__logo {
@@ -95,18 +95,18 @@ html[data-scrolled="true"] .haz_site_header .haz_brand__name {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.33rem;
+  gap: var(--size-1);
   margin: 0;
   border: none;
   cursor: pointer;
-  padding: 0.4rem 0.2rem;
+  padding: var(--size-1) var(--size-1);
   background: none;
   color: var(--haz_site_primary);
 }
 
 .haz_site_header__col_other .haz_btn svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--size-5);
+  height: var(--size-5);
   fill: var(--haz_site_primary);
 }
 
@@ -117,11 +117,11 @@ html[data-scrolled="true"] .haz_site_header .haz_brand__name {
 
 @media (min-width: 768px) {
   .haz_site_header__col_other {
-    gap: 0.15rem;
+    gap: var(--size-1);
   }
 
   .haz_site_header__col_other .haz_btn {
-    padding: 0.4rem;
+    padding: var(--size-1);
   }
 }
 
@@ -144,28 +144,22 @@ html[data-theme="light"] #haz_btn_color_scheme svg.haz_svg__moon {
 }
 
 /* Nav panel — closed by default; html.haz_state__nav_open opens it.
-   Stack: nav → socials → tagline, centered. */
+   Stack: nav → socials → tagline, centered. No max-height hack. */
 #haz_nav_main_panel {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding-block: 0;
-  transition: max-height 0.28s ease, opacity 0.22s ease, padding-block 0.22s ease;
+  gap: var(--size-3);
+  padding-block: var(--size-3);
 }
 
 html.haz_state__nav_open #haz_nav_main_panel {
-  max-height: 24rem;
-  opacity: 1;
-  padding-block: 0.75rem 1rem;
+  display: flex;
 }
 
 html.haz_state__nav_open body > header {
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: var(--size-5);
+  margin-bottom: var(--size-5);
   border-bottom: var(--border-width, 1px) solid var(--haz_site_primary);
 }
 
@@ -178,7 +172,7 @@ html.haz_state__nav_open body > header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: var(--size-3);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -199,8 +193,8 @@ html.haz_state__nav_open body > header {
   border-radius: 0;
   color: var(--haz_site_primary);
   text-decoration: none;
-  font-size: 1.5rem;
-  line-height: 1.25;
+  font-size: var(--font-size-4);
+  line-height: var(--font-lineheight-2, 1.25);
 }
 
 .haz_site_header #haz_nav_main a:hover,
@@ -221,7 +215,7 @@ html.haz_state__nav_open body > header {
 
 #haz_nav_main_panel .haz_socials__menu {
   justify-content: center;
-  gap: 0.75rem;
+  gap: var(--size-3);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -231,6 +225,6 @@ html.haz_state__nav_open body > header {
   margin: 0;
   text-align: center;
   color: var(--haz_site_primary);
-  font-size: 0.875rem;
-  line-height: 1.25;
+  font-size: var(--font-size-0);
+  line-height: var(--font-lineheight-2, 1.25);
 }
