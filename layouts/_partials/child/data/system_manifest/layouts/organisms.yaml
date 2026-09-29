@@ -19,7 +19,7 @@ organisms:
       enabled: true
       part:
         folder: haz/atomic/organisms/cols/cols_two_tag_wrapper_000
-        preset: preset_header
+        preset: preset_site_header
       children:
         enabled_false:
           enabled: false
