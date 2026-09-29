@@ -1,7 +1,7 @@
 /* Child: layout for this layouts site header (#95 add-back).
-   Tied to the shipped DOM (two rows, brand / __col_other). Rebuild the header
-   in layouts → drop or replace this file; keep out of core.
-   Site-wide tokens (--haz_chrome, Simple knobs) live in theme.css. */
+   Tied to the shipped DOM (two rows, brand / __col_other / nav panel).
+   Rebuild the header in layouts → drop or replace this file; keep out of core.
+   Site-wide tokens (--haz_site_primary, Simple knobs) live in theme.css. */
 
 body > header {
   padding-bottom: 0.5rem;
@@ -31,20 +31,13 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
   padding-block: 0;
 }
 
-.haz_site_header > div:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-block: 0;
-}
-
 /* Brand — left side of top row */
 .haz_site_header__brand {
   display: flex;
   align-items: center;
   max-width: 53vw;
   min-width: 0;
-  color: var(--haz_chrome);
+  color: var(--haz_site_primary);
 }
 
 .haz_site_header__brand a {
@@ -58,7 +51,7 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
 }
 
 .haz_site_header__brand svg {
-  fill: var(--haz_chrome);
+  fill: var(--haz_site_primary);
   max-width: 100%;
 }
 
@@ -108,18 +101,18 @@ html[data-scrolled="true"] .haz_site_header .haz_brand__name {
   cursor: pointer;
   padding: 0.4rem 0.2rem;
   background: none;
-  color: var(--haz_chrome);
+  color: var(--haz_site_primary);
 }
 
 .haz_site_header__col_other .haz_btn svg {
   width: 1.5rem;
   height: 1.5rem;
-  fill: var(--haz_chrome);
+  fill: var(--haz_site_primary);
 }
 
 .haz_site_header__col_other .haz_btn:hover svg,
 .haz_site_header__col_other .haz_btn:focus-visible svg {
-  fill: var(--haz_chrome_hover);
+  fill: var(--haz_site_primary_hover);
 }
 
 @media (min-width: 768px) {
@@ -148,4 +141,96 @@ html[data-theme="dark"] #haz_btn_color_scheme svg.haz_svg__sun {
 
 html[data-theme="light"] #haz_btn_color_scheme svg.haz_svg__moon {
   display: none;
+}
+
+/* Nav panel — closed by default; html.haz_state__nav_open opens it.
+   Stack: nav → socials → tagline, centered. */
+#haz_nav_main_panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding-block: 0;
+  transition: max-height 0.28s ease, opacity 0.22s ease, padding-block 0.22s ease;
+}
+
+html.haz_state__nav_open #haz_nav_main_panel {
+  max-height: 24rem;
+  opacity: 1;
+  padding-block: 0.75rem 1rem;
+}
+
+html.haz_state__nav_open body > header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: var(--border-width, 1px) solid var(--haz_site_primary);
+}
+
+#haz_nav_main {
+  margin: 0;
+}
+
+#haz_nav_main .haz_nav_main__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#haz_nav_main .haz_nav_main__item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Links are links — undo Simple’s header nav faux-button chrome. */
+.haz_site_header #haz_nav_main a,
+.haz_site_header #haz_nav_main a:visited {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  color: var(--haz_site_primary);
+  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.haz_site_header #haz_nav_main a:hover,
+.haz_site_header #haz_nav_main a:focus-visible {
+  color: var(--haz_site_primary_hover);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.haz_site_header #haz_nav_main a.haz_is_active {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+#haz_nav_main_panel .haz_socials {
+  margin: 0;
+}
+
+#haz_nav_main_panel .haz_socials__menu {
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#haz_nav_main_panel .haz_tagline {
+  margin: 0;
+  text-align: center;
+  color: var(--haz_site_primary);
+  font-size: 0.875rem;
+  line-height: 1.25;
 }
