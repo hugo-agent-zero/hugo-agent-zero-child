@@ -1376,9 +1376,7 @@ atoms:
         enabled: false
         inst: todo
   # Parked on purpose (not dead noise): demo Pico→Simple switch.
-  # To try Simple: rename this key to framework_css_simple_css (drop leading _)
-  # and set multipliers head_main → framework_css.inst to that key.
-  # Live graph stays framework_css_pico_css.
+  # Live graph: Open Props trial (open-props-test). Pico parked as _framework_css_pico_css.
   _framework_css_simple_css:
     enabled: true
     part:
@@ -1394,14 +1392,13 @@ atoms:
         child: framework_css_simple_css_false
         level: atoms
         inst: todo
-  framework_css_pico_css:
+  _framework_css_pico_css:
     enabled: true
     part:
       file: haz/atomic/atoms/framework_css.html
     props:
       css:
         1_main: css/pico/pico.pink.min.css
-        # vanilla still on disk: css/pico/pico.min.css — swap 1_main to demo theme switch
         2_haz: css/haz/haz.css
         3_extended: css/pico/pico-x-agent-zero.css
         4_overrides: child/css/pico/pico-override.css
@@ -1409,6 +1406,23 @@ atoms:
       enabled_false:
         enabled: false
         child: framework_css_pico_css_false
+        level: atoms
+        inst: todo
+  framework_css_open_props:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/framework_css.html
+    props:
+      css:
+        1_props: css/open-props/open-props.min.css
+        2_normalize: css/open-props/normalize.min.css
+        3_haz: css/haz/haz.css
+        4_extended: css/open-props/open-props-x-agent-zero.css
+        5_overrides: child/css/open-props/open-props-override.css
+    children:
+      enabled_false:
+        enabled: false
+        child: framework_css_open_props_false
         level: atoms
         inst: todo
   _enqueue_head:

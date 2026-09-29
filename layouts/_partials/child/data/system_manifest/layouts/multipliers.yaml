@@ -84,7 +84,7 @@ multipliers:
       framework_css:
         enabled: true
         level: atoms
-        inst: framework_css_pico_css
+        inst: framework_css_open_props
       framework_js:
         enabled: false
         level: atoms
