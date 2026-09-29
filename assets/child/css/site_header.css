@@ -16,7 +16,7 @@ html[data-scrolled="true"] body > header {
 
 .haz_site_header > div {
   width: 100%;
-  max-width: var(--haz_measure, min(1065px, 90%));
+  max-width: var(--haz_measure, min(1065px, 95%));
   margin-inline: auto;
 }
 
