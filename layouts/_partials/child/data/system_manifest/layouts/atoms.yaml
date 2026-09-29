@@ -1414,13 +1414,9 @@ atoms:
       file: haz/atomic/atoms/framework_css.html
     props:
       css:
-        # OP crayons first so Simple theme vars can reference them
+        # Zero baseline (#95): Simple floor + OP crayons only. Re-add sheets fix-by-fix.
         1_props: css/open-props/open-props.min.css
         2_simple: css/simple/simple.min.css
-        3_simple_ext: css/simple/simple-extended.css
-        4_haz: css/haz/haz.css
-        5_extended: css/open-props/open-props-x-agent-zero.css
-        6_overrides: child/css/open-props/open-props-override.css
     children:
       enabled_false:
         enabled: false
