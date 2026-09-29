@@ -1,6 +1,7 @@
 /* Child: layout for this layouts site header (#95 add-back).
    Tied to the shipped DOM (two rows, brand / __col_other). Rebuild the header
-   in layouts → drop or replace this file; keep out of core. */
+   in layouts → drop or replace this file; keep out of core.
+   Site-wide tokens (--haz_chrome, Simple knobs) live in theme.css. */
 
 body > header {
   padding-bottom: 0.5rem;
@@ -37,6 +38,60 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
   padding-block: 0;
 }
 
+/* Brand — left side of top row */
+.haz_site_header__brand {
+  display: flex;
+  align-items: center;
+  max-width: 53vw;
+  min-width: 0;
+  color: var(--haz_chrome);
+}
+
+.haz_site_header__brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  line-height: 0;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.haz_site_header__brand svg {
+  fill: var(--haz_chrome);
+  max-width: 100%;
+}
+
+.haz_site_header .haz_svg {
+  display: block;
+  height: 1rem;
+  width: auto;
+}
+
+.haz_site_header .haz_brand__name,
+.haz_site_header .haz_brand__logo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.haz_site_header .haz_brand__logo .haz_svg {
+  height: 2.175rem;
+}
+
+.haz_site_header .haz_brand__name .haz_svg {
+  height: 1.75rem;
+}
+
+html:not([data-scrolled="true"]) .haz_site_header .haz_brand__logo {
+  display: none;
+}
+
+html[data-scrolled="true"] .haz_site_header .haz_brand__name {
+  display: none;
+}
+
+/* Controls — right side of top row */
 .haz_site_header__col_other {
   display: flex;
   align-items: center;
@@ -44,7 +99,27 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
 }
 
 .haz_site_header__col_other .haz_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.33rem;
+  margin: 0;
+  border: none;
+  cursor: pointer;
   padding: 0.4rem 0.2rem;
+  background: none;
+  color: var(--haz_chrome);
+}
+
+.haz_site_header__col_other .haz_btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--haz_chrome);
+}
+
+.haz_site_header__col_other .haz_btn:hover svg,
+.haz_site_header__col_other .haz_btn:focus-visible svg {
+  fill: var(--haz_chrome_hover);
 }
 
 @media (min-width: 768px) {
@@ -55,4 +130,22 @@ html[data-scrolled="true"] .haz_site_header > div:first-child {
   .haz_site_header__col_other .haz_btn {
     padding: 0.4rem;
   }
+}
+
+#haz_btn_nav_main[aria-expanded="false"] svg.haz_svg__close_x,
+#haz_btn_search[aria-expanded="false"] svg.haz_svg__close_x {
+  display: none;
+}
+
+#haz_btn_nav_main[aria-expanded="true"] svg.haz_svg__hamburger,
+#haz_btn_search[aria-expanded="true"] svg.haz_svg__search {
+  display: none;
+}
+
+html[data-theme="dark"] #haz_btn_color_scheme svg.haz_svg__sun {
+  display: none;
+}
+
+html[data-theme="light"] #haz_btn_color_scheme svg.haz_svg__moon {
+  display: none;
 }
