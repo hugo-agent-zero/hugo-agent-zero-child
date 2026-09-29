@@ -165,14 +165,14 @@ html[data-theme="light"] #haz_btn_color_scheme svg.haz_svg__moon {
   padding-block: 0;
   gap: 0;
   transition:
-    max-height 0.28s ease,
-    opacity 0.22s ease,
-    padding-block 0.22s ease,
-    gap 0.22s ease;
+    max-height var(--haz_nav_panel_duration) var(--haz_ease),
+    opacity var(--haz_nav_panel_duration_fade) var(--haz_ease),
+    padding-block var(--haz_nav_panel_duration_fade) var(--haz_ease),
+    gap var(--haz_nav_panel_duration_fade) var(--haz_ease);
 }
 
 html.haz_state__nav_open #haz_nav_main_panel {
-  max-height: var(--size-15);
+  max-height: var(--haz_nav_panel_max_height);
   opacity: 1;
   padding-block: var(--size-3);
   gap: var(--size-3);

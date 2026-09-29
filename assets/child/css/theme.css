@@ -6,6 +6,12 @@
   --haz_site_primary: var(--pink-7);
   --haz_site_primary_hover: var(--pink-8);
 
+  /* Motion — HAZ keys; values from OP (or plain times). */
+  --haz_ease: var(--ease-2);
+  --haz_nav_panel_duration: 0.28s;
+  --haz_nav_panel_duration_fade: 0.22s;
+  --haz_nav_panel_max_height: var(--size-15);
+
   /* Simple ← OP crayons (light defaults) */
   --bg: var(--gray-0);
   --accent-bg: var(--gray-2);
