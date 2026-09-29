@@ -1,10 +1,10 @@
-/* Child: site skin — Simple theme knobs fed by Open Props + HAZ chrome.
+/* Child: site skin — Simple theme knobs fed by Open Props + HAZ site primary.
    Site-wide tokens live here (not in layouts chrome files like site_header.css).
-   Chrome ≈ Pico fuchsia via OP (Props Color Finder); --pink-7 closest to #c1208b. */
+   Primary ≈ Pico fuchsia via OP; --pink-7 closest to #c1208b (Props Color Finder). */
 
 :root {
-  --haz_chrome: var(--pink-7);
-  --haz_chrome_hover: var(--pink-8);
+  --haz_site_primary: var(--pink-7);
+  --haz_site_primary_hover: var(--pink-8);
 
   /* Simple ← OP crayons (light defaults) */
   --bg: var(--gray-0);
@@ -12,8 +12,8 @@
   --text: var(--gray-12);
   --text-light: var(--gray-7);
   --border: var(--gray-6);
-  --accent: var(--haz_chrome);
-  --accent-hover: var(--haz_chrome_hover);
+  --accent: var(--haz_site_primary);
+  --accent-hover: var(--haz_site_primary_hover);
   --accent-text: var(--bg);
   --code: var(--pink-8);
   --preformatted: var(--gray-8);
@@ -24,15 +24,15 @@
 /* HAZ data-theme toggle (wins over Simple’s prefers-color-scheme / .dark) */
 html[data-theme="light"] {
   color-scheme: light;
-  --haz_chrome: var(--pink-7);
-  --haz_chrome_hover: var(--pink-8);
+  --haz_site_primary: var(--pink-7);
+  --haz_site_primary_hover: var(--pink-8);
   --bg: var(--gray-0);
   --accent-bg: var(--gray-2);
   --text: var(--gray-12);
   --text-light: var(--gray-7);
   --border: var(--gray-6);
-  --accent: var(--haz_chrome);
-  --accent-hover: var(--haz_chrome_hover);
+  --accent: var(--haz_site_primary);
+  --accent-hover: var(--haz_site_primary_hover);
   --accent-text: var(--bg);
   --code: var(--pink-8);
   --preformatted: var(--gray-8);
@@ -42,15 +42,15 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --haz_chrome: var(--pink-5);
-  --haz_chrome_hover: var(--pink-3);
+  --haz_site_primary: var(--pink-5);
+  --haz_site_primary_hover: var(--pink-3);
   --bg: var(--gray-9);
   --accent-bg: var(--gray-8);
   --text: var(--gray-1);
   --text-light: var(--gray-4);
   --border: var(--gray-7);
-  --accent: var(--haz_chrome);
-  --accent-hover: var(--haz_chrome_hover);
+  --accent: var(--haz_site_primary);
+  --accent-hover: var(--haz_site_primary_hover);
   --accent-text: var(--bg);
   --code: var(--pink-3);
   --preformatted: var(--gray-4);
