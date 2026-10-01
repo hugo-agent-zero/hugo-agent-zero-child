@@ -3,15 +3,18 @@
 
 .haz_socials {
   display: block;
+  width: 100%;
   margin-block: var(--size-3);
 }
 
+/* HAZ.com: space-between across the measure (wider air than a fixed gap). */
 .haz_socials__menu {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: var(--size-3);
+  justify-content: space-between;
+  gap: var(--size-2);
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
