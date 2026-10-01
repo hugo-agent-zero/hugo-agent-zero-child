@@ -6,6 +6,10 @@
   --haz_site_primary: var(--pink-7);
   --haz_site_primary_hover: var(--pink-8);
 
+  /* Measure — px spine (same idea as haz_img); OP --size-lg = 1024px. */
+  --haz_measure_px: var(--size-lg);
+  --haz_measure: min(var(--haz_measure_px), 95%);
+
   /* Motion — HAZ keys; values from OP (or plain times). */
   --haz_ease: var(--ease-2);
   --haz_nav_panel_duration: 0.28s;
