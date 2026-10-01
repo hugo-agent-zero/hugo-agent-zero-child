@@ -1,6 +1,16 @@
 /* Child: layout for this layouts site footer (#95 add-back).
-   Simple’s body > footer strip is neutralized in simple-x; chrome lives here.
-   Site-wide tokens live in theme.css. */
+   Layout/design aligned with HAZ.com (pico-override footer), OP tokens here.
+   simple-x only zeroes Simple’s footer margin-top; other strip resets live here. */
+
+body > footer.haz_footer_site {
+  grid-column: 1 / -1;
+  text-align: start;
+  font-size: inherit;
+  color: inherit;
+  padding-block: var(--size-3);
+  padding-inline: 0;
+  background-color: var(--accent-bg);
+}
 
 .haz_footer_site > div {
   width: 100%;
@@ -8,7 +18,7 @@
   margin-inline: auto;
 }
 
-/* Two-col bar — DOM brand first, visual right via row-reverse */
+/* Two-col bar — DOM brand first, visual right via row-reverse (HAZ.com) */
 .haz_footer_site > div:first-child {
   display: flex;
   justify-content: space-between;
@@ -28,6 +38,7 @@
   color: var(--haz_site_primary);
 }
 
+/* Wordmark — same fill fix as site_header brand (black fill vanishes on dark). */
 .haz_footer_site__brand svg,
 .haz_footer_site__col_other svg {
   fill: var(--haz_site_primary);
@@ -62,24 +73,26 @@
   opacity: 0.85;
 }
 
-/* Footer tertiary nav — horizontal utility links in col_other */
+/* Tertiary nav — horizontal utility row (HAZ.com); kill UA list chrome Simple leaves on. */
 .haz_footer_site__col_other .haz_nav_tertiary__menu {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
   gap: var(--size-3);
   margin: 0;
   padding: 0;
   list-style: none;
-  justify-content: flex-start;
 }
 
 .haz_footer_site__col_other .haz_nav_tertiary__item {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .haz_footer_site__col_other .haz_nav_tertiary__link {
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-2);
   line-height: var(--font-lineheight-2, 1.25);
   color: var(--haz_site_primary);
   text-decoration: none;
