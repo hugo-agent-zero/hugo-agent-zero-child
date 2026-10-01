@@ -214,38 +214,6 @@ html.haz_state__nav_open body > header {
   padding: 0;
 }
 
-/* Links are links — undo Simple’s header nav faux-button chrome. */
-.haz_site_header #haz_nav_main a,
-.haz_site_header #haz_nav_main a:visited {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: none;
-  color: var(--haz_site_primary);
-  text-decoration: none;
-  font-size: var(--font-size-4);
-  line-height: var(--font-lineheight-2, 1.25);
-}
-
-.haz_site_header #haz_nav_main a:hover,
-.haz_site_header #haz_nav_main a:focus-visible,
-.haz_site_header #haz_nav_main a.current,
-.haz_site_header #haz_nav_main a[aria-current="page"],
-.haz_site_header #haz_nav_main a[aria-current="true"],
-.haz_site_header #haz_nav_main a.haz_is_active {
-  background: none;
-  border: none;
-  color: var(--haz_site_primary_hover);
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
-
-.haz_site_header #haz_nav_main a.haz_is_active {
-  color: var(--haz_site_primary);
-}
-
 #haz_nav_main_panel .haz_socials {
   margin: 0;
 }
