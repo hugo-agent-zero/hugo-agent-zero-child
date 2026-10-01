@@ -1422,7 +1422,8 @@ atoms:
         5_theme: child/css/theme.css
         6_fonts: child/css/fonts.css
         7_site_header: child/css/site_header.css
-        8_socials: child/css/socials.css
+        8_site_footer: child/css/site_footer.css
+        9_socials: child/css/socials.css
     children:
       enabled_false:
         enabled: false
