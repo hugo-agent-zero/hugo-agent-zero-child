@@ -18,20 +18,21 @@ body > footer.haz_footer_site {
   margin-inline: auto;
 }
 
-/* Two-col bar — DOM brand first, visual right via row-reverse (HAZ.com) */
+/* Top bar — mobile-first: stacked + centered; wide = HAZ.com row-reverse. */
 .haz_footer_site > div:first-child {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row-reverse;
+  justify-content: center;
   gap: var(--size-3);
   padding-block: var(--size-3);
+  text-align: center;
 }
 
 .haz_footer_site__brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: var(--size-2);
   min-width: 0;
   max-width: 100%;
@@ -53,7 +54,7 @@ body > footer.haz_footer_site {
 
 .haz_footer_site__brand .haz_tagline {
   margin: 0;
-  text-align: end;
+  text-align: center;
   color: var(--haz_site_primary);
   font-size: var(--font-size-2);
   line-height: var(--font-lineheight-2, 1.25);
@@ -65,6 +66,7 @@ body > footer.haz_footer_site {
 
 .haz_footer_site > div:nth-child(2) {
   padding-bottom: var(--size-3);
+  text-align: center;
 }
 
 .haz_copyright_000 {
@@ -73,12 +75,12 @@ body > footer.haz_footer_site {
   opacity: 0.85;
 }
 
-/* Tertiary nav — horizontal utility row (HAZ.com); kill UA list chrome Simple leaves on. */
+/* Tertiary nav — horizontal utility row; kill UA list chrome Simple leaves on. */
 .haz_footer_site__col_other .haz_nav_tertiary__menu {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: var(--size-3);
   margin: 0;
   padding: 0;
@@ -105,26 +107,27 @@ body > footer.haz_footer_site {
   text-underline-offset: 0.12em;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .haz_footer_site > div:first-child {
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    text-align: start;
   }
 
   .haz_footer_site__brand {
-    align-items: center;
+    align-items: flex-end;
   }
 
   .haz_footer_site__brand .haz_tagline {
-    text-align: center;
+    text-align: end;
   }
 
   .haz_footer_site__col_other .haz_nav_tertiary__menu {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .haz_footer_site > div:nth-child(2) {
-    text-align: center;
+    text-align: start;
   }
 }
