@@ -214,16 +214,9 @@ html.haz_state__nav_open body > header {
   padding: 0;
 }
 
+/* Panel: kill default socials block margin; row layout lives in socials.css. */
 #haz_nav_main_panel .haz_socials {
   margin: 0;
-}
-
-#haz_nav_main_panel .haz_socials__menu {
-  justify-content: center;
-  gap: var(--size-3);
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 #haz_nav_main_panel .haz_tagline {
