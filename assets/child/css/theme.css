@@ -6,9 +6,16 @@
   --haz_site_primary: var(--pink-7);
   --haz_site_primary_hover: var(--pink-8);
 
-  /* Measure — px spine (same idea as haz_img); OP --size-lg = 1024px. */
+  /*
+    Measure + fluid type (#70 / child #87 calculator, OP stack).
+    A: --haz_measure_px (OP --size-lg = 1024). Gutter 95% → 90% from lg.
+    Two clamps, seam at lg (1024) — no cliff. Headings = rem of root (#30).
+    Band 1: 1rem @ ~320 → 1.125rem @ ~1024.
+    Band 2: 1.125rem @ ~1024 → 1.3rem @ ~A (90% of measure).
+  */
   --haz_measure_px: var(--size-lg);
   --haz_measure: min(var(--haz_measure_px), 95%);
+  --haz_font_size: clamp(1rem, 0.9432rem + 0.2841vw, 1.125rem);
 
   /* Motion — HAZ keys; values from OP (or plain times). */
   --haz_ease: var(--ease-2);
@@ -29,6 +36,22 @@
   --preformatted: var(--gray-8);
   --marked: var(--yellow-3);
   --disabled: var(--gray-3);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --haz_measure: min(var(--haz_measure_px), 90%);
+    --haz_font_size: clamp(1.125rem, -0.4498rem + 2.4607vw, 1.3rem);
+  }
+}
+
+/* Root fluid type — override Simple’s fixed body 1.15rem so rem headings follow. */
+html {
+  font-size: var(--haz_font_size);
+}
+
+body {
+  font-size: 1rem;
 }
 
 /* HAZ data-theme toggle (wins over Simple’s prefers-color-scheme / .dark) */
