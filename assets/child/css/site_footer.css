@@ -119,6 +119,10 @@ body > footer.haz_footer_site {
     align-items: flex-end;
   }
 
+  .haz_footer_site__brand .haz_svg {
+    height: var(--size-6);
+  }
+
   .haz_footer_site__brand .haz_tagline {
     text-align: end;
   }
