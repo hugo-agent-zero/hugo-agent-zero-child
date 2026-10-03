@@ -1376,13 +1376,12 @@ atoms:
         enabled: false
         inst: todo
   # Parked on purpose (not dead noise): demo Pico→Simple switch.
-  # Live: Simple floor + Open Props crayons (no OP normalize). Pico parked.
+  # Live: silos under multipliers enqueue_header. Pico parked.
   _framework_css_simple_css:
     enabled: true
     part:
       file: haz/atomic/atoms/enqueue_000.html
     props:
-      location: head
       collection:
         1_main:
           src: css/simple/simple.min.css
@@ -1401,7 +1400,6 @@ atoms:
     part:
       file: haz/atomic/atoms/enqueue_000.html
     props:
-      location: head
       collection:
         1_main:
           src: css/pico/pico.pink.min.css
@@ -1417,15 +1415,13 @@ atoms:
         child: framework_css_pico_css_false
         level: atoms
         inst: todo
-  # Phase 1: mega collection still OK — Phase 2 will silo OP / Simple / haz / child.
-  framework_css_open_props:
+  # Parked mega (Phase 1). Live = enqueue_* silos + enqueue_header multiplier.
+  _framework_css_open_props:
     enabled: true
     part:
       file: haz/atomic/atoms/enqueue_000.html
     props:
-      location: head
       collection:
-        # #95: OP props → Simple (min + x) → haz utils → theme → fonts → layouts chrome → socials.
         1_props:
           src: css/open-props/open-props.min.css
         2_simple:
@@ -1450,12 +1446,78 @@ atoms:
         child: framework_css_open_props_false
         level: atoms
         inst: todo
+  # #95 cascade silos — mounted only via multipliers enqueue_header.
+  enqueue_open_props:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/enqueue_000.html
+    props:
+      collection:
+        1_props:
+          src: css/open-props/open-props.min.css
+    children:
+      enabled_false:
+        enabled: false
+        child: enqueue_open_props_false
+        level: atoms
+        inst: todo
+  enqueue_simple:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/enqueue_000.html
+    props:
+      collection:
+        1_simple:
+          src: css/simple/simple.min.css
+        2_simple_x:
+          src: css/simple/simple-x-agent-zero.css
+    children:
+      enabled_false:
+        enabled: false
+        child: enqueue_simple_false
+        level: atoms
+        inst: todo
+  enqueue_haz:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/enqueue_000.html
+    props:
+      collection:
+        1_haz:
+          src: css/haz/haz.css
+    children:
+      enabled_false:
+        enabled: false
+        child: enqueue_haz_false
+        level: atoms
+        inst: todo
+  enqueue_child:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/enqueue_000.html
+    props:
+      collection:
+        1_theme:
+          src: child/css/theme.css
+        2_fonts:
+          src: child/css/fonts.css
+        3_site_header:
+          src: child/css/site_header.css
+        4_site_footer:
+          src: child/css/site_footer.css
+        5_socials:
+          src: child/css/socials.css
+    children:
+      enabled_false:
+        enabled: false
+        child: enqueue_child_false
+        level: atoms
+        inst: todo
   _enqueue_head:
     enabled: false
     part:
       file: haz/atomic/atoms/enqueue_000.html
-    props:
-      location: head
+    props: {}
     children:
       enabled_false:
         enabled: false
@@ -1467,7 +1529,7 @@ atoms:
     part:
       file: haz/atomic/atoms/enqueue_000.html
     props:
-      location: footer
+      in_footer: true
     children:
       enabled_false:
         enabled: false
