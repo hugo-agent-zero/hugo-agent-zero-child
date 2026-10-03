@@ -1380,12 +1380,16 @@ atoms:
   _framework_css_simple_css:
     enabled: true
     part:
-      file: haz/atomic/atoms/framework_css.html
+      file: haz/atomic/atoms/enqueue_000.html
     props:
-      css:
-        1_main: css/simple/simple.min.css
-        2_extended: css/simple/simple-extended.css
-        3_overrides: child/css/simple/simple-override.css
+      location: head
+      collection:
+        1_main:
+          src: css/simple/simple.min.css
+        2_extended:
+          src: css/simple/simple-extended.css
+        3_overrides:
+          src: child/css/simple/simple-override.css
     children:
       enabled_false:
         enabled: false
@@ -1395,35 +1399,51 @@ atoms:
   _framework_css_pico_css:
     enabled: true
     part:
-      file: haz/atomic/atoms/framework_css.html
+      file: haz/atomic/atoms/enqueue_000.html
     props:
-      css:
-        1_main: css/pico/pico.pink.min.css
-        2_haz: css/haz/haz.css
-        3_extended: css/pico/pico-x-agent-zero.css
-        4_overrides: child/css/pico/pico-override.css
+      location: head
+      collection:
+        1_main:
+          src: css/pico/pico.pink.min.css
+        2_haz:
+          src: css/haz/haz.css
+        3_extended:
+          src: css/pico/pico-x-agent-zero.css
+        4_overrides:
+          src: child/css/pico/pico-override.css
     children:
       enabled_false:
         enabled: false
         child: framework_css_pico_css_false
         level: atoms
         inst: todo
+  # Phase 1: mega collection still OK — Phase 2 will silo OP / Simple / haz / child.
   framework_css_open_props:
     enabled: true
     part:
-      file: haz/atomic/atoms/framework_css.html
+      file: haz/atomic/atoms/enqueue_000.html
     props:
-      css:
+      location: head
+      collection:
         # #95: OP props → Simple (min + x) → haz utils → theme → fonts → layouts chrome → socials.
-        1_props: css/open-props/open-props.min.css
-        2_simple: css/simple/simple.min.css
-        3_simple_x: css/simple/simple-x-agent-zero.css
-        4_haz: css/haz/haz.css
-        5_theme: child/css/theme.css
-        6_fonts: child/css/fonts.css
-        7_site_header: child/css/site_header.css
-        8_site_footer: child/css/site_footer.css
-        9_socials: child/css/socials.css
+        1_props:
+          src: css/open-props/open-props.min.css
+        2_simple:
+          src: css/simple/simple.min.css
+        3_simple_x:
+          src: css/simple/simple-x-agent-zero.css
+        4_haz:
+          src: css/haz/haz.css
+        5_theme:
+          src: child/css/theme.css
+        6_fonts:
+          src: child/css/fonts.css
+        7_site_header:
+          src: child/css/site_header.css
+        8_site_footer:
+          src: child/css/site_footer.css
+        9_socials:
+          src: child/css/socials.css
     children:
       enabled_false:
         enabled: false
@@ -1433,7 +1453,7 @@ atoms:
   _enqueue_head:
     enabled: false
     part:
-      file: haz/atomic/atoms/_enqueue_000.html
+      file: haz/atomic/atoms/enqueue_000.html
     props:
       location: head
     children:
@@ -1445,7 +1465,7 @@ atoms:
   _enqueue_footer:
     enabled: false
     part:
-      file: haz/atomic/atoms/_enqueue_000.html
+      file: haz/atomic/atoms/enqueue_000.html
     props:
       location: footer
     children:
