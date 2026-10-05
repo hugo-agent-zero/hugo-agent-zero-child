@@ -80,8 +80,9 @@ settings:
         xl: 1.5
         xxl: 2.0
       # Swappable helpers (child may point at another partial).
-      variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
-      band_resolve_fn: haz/helpers/fn/fn_haz_img_band_resolve.html
+      helpers:
+        variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
+        band_resolve_fn: haz/helpers/fn/fn_haz_img_band_resolve.html
     # Mom types these names. Engine (m/t/d, ratio, fit) stays here.
     # Each band is a map: w (25|50|75|100), align (left|right|center|none).
     # Omit a band or field → inherit the one above. class is leftovers.
@@ -145,4 +146,4 @@ settings:
           w: 100
     # How-wide: lg = content_width_px. sm/md = gutter×(BP−1) capped at lg.
     # ladder knobs: xs|sm × smSpine; md × mdSpine; lg|xl|xxl × lgSpine.
-    # Fns: variant_widths_fn / band_resolve_fn (swappable paths above).
+    # Fns: config.helpers.variant_widths_fn / band_resolve_fn (swappable).
