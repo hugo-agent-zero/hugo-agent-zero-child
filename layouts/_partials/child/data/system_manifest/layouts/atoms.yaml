@@ -1471,6 +1471,32 @@ atoms:
           src: css/simple/simple.min.css
         2_simple_x:
           src: css/simple/simple-x-agent-zero.css
+        # --- enqueue prop smoke (fake URLs OK; remove when done) ---
+        # expect IN head: link with ?ver=enqueue-test-1
+        z_test_style_ver:
+          src: https://example.invalid/enqueue-test/style.css
+          type: style
+          bust: false
+          ver: "ver=enqueue-test-1"
+        # expect IN head: script + ver stacked (bust no-op on http)
+        z_test_script_ver_bust:
+          src: https://example.invalid/enqueue-test/app.js
+          type: script
+          bust: true
+          ver: "ver=enqueue-test-2"
+        # expect ABSENT (enabled false)
+        z_test_enabled_false:
+          src: https://example.invalid/enqueue-test/skip-enabled.css
+          enabled: false
+          ver: "ver=should-not-appear"
+        # expect ABSENT from head (in_footer; no footer mount yet)
+        z_test_in_footer:
+          src: https://example.invalid/enqueue-test/footer-only.js
+          type: script
+          in_footer: true
+          ver: "ver=footer-only"
+        # expect IN head: bare-string shorthand → style defaults
+        z_test_shorthand: https://example.invalid/enqueue-test/shorthand.css
     children:
       enabled_false:
         enabled: false
