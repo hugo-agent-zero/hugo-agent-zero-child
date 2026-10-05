@@ -1,4 +1,5 @@
 # PARKED — enqueue MVP (not loaded). Reinstate via enqueue.yaml + fn_get_sys_manifest + layouts.
+# HQ dingleberries list: https://github.com/hugo-agent-zero/hugo-agent-zero/issues/108
 # TODO revisit: deps, SVG registry vs socials, per-SVG preloads, module extract.
 _enqueue:
   fa-free:
