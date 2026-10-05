@@ -93,7 +93,7 @@ multipliers:
         enabled: false
         level: atoms
         inst: todo
-  # CSS enqueue silos only — OP → Simple → haz → child (#95).
+  # CSS enqueue silos only — OP → Simple → haz → haz_img → child (#95).
   enqueue_header:
     enabled: true
     part:
@@ -103,6 +103,7 @@ multipliers:
       - enqueue_open_props
       - enqueue_simple
       - enqueue_haz
+      - enqueue_haz_img
       - enqueue_child
     children:
       enabled_false:
@@ -122,6 +123,10 @@ multipliers:
         enabled: true
         level: atoms
         inst: enqueue_haz
+      enqueue_haz_img:
+        enabled: true
+        level: atoms
+        inst: enqueue_haz_img
       enqueue_child:
         enabled: true
         level: atoms
