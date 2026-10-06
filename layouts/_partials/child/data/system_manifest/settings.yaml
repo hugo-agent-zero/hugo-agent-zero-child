@@ -73,7 +73,7 @@ settings:
       # Swappable helpers (child may point at another partial).
       helpers:
         variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
-        band_resolve_fn: haz/helpers/fn/fn_haz_img_band_resolve.html
+        rwd_resolve_fn: haz/helpers/fn/fn_haz_img_rwd_resolve.html
     # Mom types these names. Engine stays here.
     # rwd.m|t|d: w (25|33|50|67|75|100 % of column), align, ratio (e.g. "16/9"). Omit → inherit above.
     # fit cover for v1 when any band has ratio. class is leftovers.
@@ -143,4 +143,4 @@ settings:
           m:
             w: 100
             ratio: "3/4"
-    # rwd.m|t|d ↔ config.max_px + width_px.sm|md|lg. Helpers swappable.
+    # rwd.m|t|d ↔ config.max_px + width_px.sm|md|lg. Helpers swappable (variant_widths_fn / rwd_resolve_fn).
