@@ -75,7 +75,7 @@ settings:
         variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
         band_resolve_fn: haz/helpers/fn/fn_haz_img_band_resolve.html
     # Mom types these names. Engine stays here.
-    # rwd.m|t|d: w (% of column), align, ratio (e.g. "16/9"). Omit → inherit above.
+    # rwd.m|t|d: w (25|33|50|67|75|100 % of column), align, ratio (e.g. "16/9"). Omit → inherit above.
     # fit cover for v1 when any band has ratio. class is leftovers.
     presets:
       story_wide:
