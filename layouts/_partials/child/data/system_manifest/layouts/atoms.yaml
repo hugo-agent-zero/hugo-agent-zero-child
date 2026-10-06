@@ -1491,6 +1491,20 @@ atoms:
         child: enqueue_haz_false
         level: atoms
         inst: todo
+  enqueue_haz_img:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/enqueue_000.html
+    props:
+      collection:
+        1_haz_img:
+          src: css/haz/haz_img.css
+    children:
+      enabled_false:
+        enabled: false
+        child: enqueue_haz_img_false
+        level: atoms
+        inst: todo
   enqueue_child:
     enabled: true
     part:
