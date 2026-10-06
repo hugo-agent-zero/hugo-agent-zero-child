@@ -143,4 +143,42 @@ settings:
           m:
             w: 100
             ratio: "3/4"
+      # Dogfood: ratio per band (same w). Cover crops change at 480 / 768.
+      ratio_shift:
+        term: Ratio shift m/t/d
+        fit: cover
+        rwd:
+          m:
+            w: 100
+            ratio: "16/9"
+          t:
+            ratio: "1/1"
+          d:
+            ratio: "3/4"
+      # Dogfood: true-third width (CSS 33.333% + sizes hole).
+      third_left:
+        term: Third left
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: left
+            ratio: "1/1"
+      # Dogfood: two-thirds + ratio still moves across bands.
+      two_thirds_ratio:
+        term: Two-thirds ratio mix
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: right
+            ratio: "16/9"
+          t:
+            w: 33
+            align: left
+            ratio: "1/1"
+          d:
+            w: 67
+            align: right
+            ratio: "3/4"
     # rwd.m|t|d ↔ config.max_px + width_px.sm|md|lg. Helpers swappable (variant_widths_fn / rwd_resolve_fn).
