@@ -4,7 +4,11 @@
    Site-wide tokens (--haz_site_primary, Simple knobs) live in theme.css. */
 
 body > header {
-  padding-bottom: var(--size-2);
+  /* Simple: padding 0 .5rem 2rem + border-bottom, written for a header at the top of the page.
+     Announcement sits above this bar, and the brand row already pads itself (padding-block).
+     Resting bar: no extra bottom pad, no hairline. Open nav still paints its own rule below. */
+  padding-bottom: 0;
+  border-bottom: 0;
   position: sticky;
   top: 0;
   z-index: 200;
