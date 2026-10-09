@@ -5,6 +5,8 @@
 :root {
   --haz_site_primary: var(--pink-7);
   --haz_site_primary_hover: var(--pink-8);
+  /* haz_do titles. Callout and list both read this. */
+  --haz_do_title_weight: 700;
   /* List strokes. Recolor here. The kit rules only read these tokens.
      Box: transparent removes the outside stroke and keeps the width. */
   --haz_do_list_border: var(--haz_site_primary);
