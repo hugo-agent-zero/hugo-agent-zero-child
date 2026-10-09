@@ -5,6 +5,10 @@
 :root {
   --haz_site_primary: var(--pink-7);
   --haz_site_primary_hover: var(--pink-8);
+  /* List strokes. Recolor here. The kit rules only read these tokens.
+     Box: transparent removes the outside stroke and keeps the width. */
+  --haz_do_list_border: var(--haz_site_primary);
+  --haz_do_list_box_border: var(--border);
 
   /*
     Measure + fluid type (#70 / child #87 calculator, OP stack).
