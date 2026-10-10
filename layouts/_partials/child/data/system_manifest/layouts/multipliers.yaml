@@ -307,6 +307,7 @@ multipliers:
       order:
       - toggler
       - modal
+      - embla
     children:
       enabled_false:
         enabled: false
@@ -321,6 +322,10 @@ multipliers:
         enabled: true
         level: atoms
         inst: script_modal
+      embla:
+        enabled: true
+        level: atoms
+        inst: script_embla
   search_pagefind_modal_000_content:
     enabled: true
     part:
