@@ -11,6 +11,8 @@
      Box: transparent removes the outside stroke and keeps the width. */
   --haz_do_list_border: var(--haz_site_primary);
   --haz_do_list_box_border: var(--border);
+  /* Active tab, its panel, and an open details. Light uses the grey surface. */
+  --haz_do_tab_fill: var(--accent-bg);
 
   /*
     Measure + fluid type (#70 / child #87 calculator, OP stack).
@@ -79,11 +81,6 @@ html[data-theme="light"] {
   --disabled: var(--gray-3);
 }
 
-/* Simple strokes details with --border. Light fill is enough; keep the width so the box doesn't jump. */
-html[data-theme="light"] details {
-  border-color: transparent;
-}
-
 html[data-theme="dark"] {
   color-scheme: dark;
   --haz_site_primary: var(--pink-5);
@@ -101,4 +98,16 @@ html[data-theme="dark"] {
   --preformatted: var(--gray-4);
   --marked: var(--yellow-3);
   --disabled: var(--gray-8);
+  /* Body is near-black. accent-bg is black, so it cannot mark the active tab. */
+  --haz_do_tab_fill: var(--gray-9);
+}
+
+/* Light accent background is the same grey as the open fill, so a closed details looks filled. */
+html[data-theme="light"] details:not([open]) {
+  background-color: transparent;
+}
+
+/* Open details shares the tab surface. */
+details[open] {
+  background-color: var(--haz_do_tab_fill, var(--accent-bg));
 }
