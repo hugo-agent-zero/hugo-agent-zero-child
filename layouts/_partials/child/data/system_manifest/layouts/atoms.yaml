@@ -990,6 +990,13 @@ atoms:
     children:
       enabled_false:
         enabled: false
+  script_embla:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/assets/js/script_embla_000.html
+    children:
+      enabled_false:
+        enabled: false
   script_scroll_toggle_000:
     enabled: true
     part:
