@@ -997,6 +997,13 @@ atoms:
     children:
       enabled_false:
         enabled: false
+  script_grid_more_000:
+    enabled: true
+    part:
+      file: haz/atomic/atoms/assets/js/script_grid_more_000.html
+    children:
+      enabled_false:
+        enabled: false
   script_scroll_toggle_000:
     enabled: true
     part:

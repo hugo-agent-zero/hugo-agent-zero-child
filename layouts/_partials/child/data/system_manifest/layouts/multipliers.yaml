@@ -308,6 +308,7 @@ multipliers:
       - toggler
       - modal
       - embla
+      - grid_more
     children:
       enabled_false:
         enabled: false
@@ -326,6 +327,10 @@ multipliers:
         enabled: true
         level: atoms
         inst: script_embla_init_000
+      grid_more:
+        enabled: true
+        level: atoms
+        inst: script_grid_more_000
   search_pagefind_modal_000_content:
     enabled: true
     part:
