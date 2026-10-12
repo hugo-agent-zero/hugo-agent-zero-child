@@ -990,10 +990,10 @@ atoms:
     children:
       enabled_false:
         enabled: false
-  script_embla:
+  script_embla_init_000:
     enabled: true
     part:
-      file: haz/atomic/atoms/assets/js/script_embla_000.html
+      file: haz/atomic/atoms/assets/js/script_embla_init_000.html
     children:
       enabled_false:
         enabled: false
