@@ -325,7 +325,7 @@ multipliers:
       embla:
         enabled: true
         level: atoms
-        inst: script_embla
+        inst: script_embla_init_000
   search_pagefind_modal_000_content:
     enabled: true
     part:
