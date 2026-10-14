@@ -295,6 +295,28 @@ molecules:
           group: details
           inst: faq_list_wrapper_000
   page:
+    term_page_title_000:
+      enabled: true
+      part:
+        file: haz/atomic/molecules/page/term_page_title_000.html
+      props:
+        separator: ": "
+      children:
+        enabled_false:
+          enabled: false
+          child: term_page_title_000_false
+          level: atoms
+          inst: todo
+        prefix:
+          enabled: true
+          level: atoms
+          group: page
+          inst: taxonomy_singular_000
+        title:
+          enabled: true
+          level: atoms
+          group: page
+          inst: page_title_000
     page_h1_title_content_000:
       enabled: true
       part:

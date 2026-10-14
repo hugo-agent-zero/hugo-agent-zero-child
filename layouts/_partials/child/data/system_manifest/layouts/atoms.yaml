@@ -347,9 +347,20 @@ atoms:
           inst: todo
         content:
           enabled: true
-          level: atoms
+          level: molecules
           group: page
-          inst: page_title_000
+          inst: term_page_title_000
+    taxonomy_singular_000:
+      enabled: true
+      part:
+        file: haz/atomic/atoms/hugo_taxonomy_singular.html
+      props: {}
+      children:
+        enabled_false:
+          enabled: false
+          child: taxonomy_singular_000_false
+          level: atoms
+          inst: todo
     page_title_000:
       enabled: true
       part:
