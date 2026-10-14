@@ -295,16 +295,16 @@ molecules:
           group: details
           inst: faq_list_wrapper_000
   page:
-    term_page_title_000:
+    page_title_prefix_singular_000:
       enabled: true
       part:
-        file: haz/atomic/molecules/page/term_page_title_000.html
+        file: haz/atomic/molecules/page/page_title_prefix_singular_000.html
       props:
         separator: ": "
       children:
         enabled_false:
           enabled: false
-          child: term_page_title_000_false
+          child: page_title_prefix_singular_000_false
           level: atoms
           inst: todo
         prefix:
