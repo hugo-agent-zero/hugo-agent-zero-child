@@ -35,17 +35,20 @@ settings:
   taxonomies:
     authors:
       term: Author
+      singular: Author
       list_tag: ul
       delimiter: ", "
       rel: author
       row_partial: haz/helpers/fn/fn_list_row_link_000
     categories:
       term: Categories
+      singular: Category
       list_tag: ul
       delimiter: ", "
       row_partial: haz/helpers/fn/fn_list_row_link_000
     tags:
       term: Tags
+      singular: Tag
       list_tag: ul
       delimiter: ", "
       rel: tag
