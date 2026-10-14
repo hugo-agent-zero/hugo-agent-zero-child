@@ -302,6 +302,7 @@ molecules:
       props:
         separator: ": "
         prefix_singular: true
+        _prefix_singular: false
       children:
         enabled_false:
           enabled: false
