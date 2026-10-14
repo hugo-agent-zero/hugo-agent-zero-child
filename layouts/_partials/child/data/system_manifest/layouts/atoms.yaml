@@ -349,7 +349,7 @@ atoms:
           enabled: true
           level: molecules
           group: page
-          inst: term_page_title_000
+          inst: page_title_prefix_term_000
     taxonomy_singular_000:
       enabled: true
       part:
