@@ -3,6 +3,11 @@ settings:
     name: Hugo Agent Zero
     tagline: The is our FPO Hugo Agent Zero Tag Line
     copyright: Hugo Agent Zero # legal holder; may differ from site.name
+  paging:
+    # POC: 2 posts/page → 12 pages. pager_pages 12 = no ellipsis for this swipe test.
+    posts_per_page: 2
+    pager_pages: 12     # <ol> slots; held constant. 5+ recommended (first + last + current + ellipses), not enforced.
+    pager_pages_swipe: true
   dates:
     default: publishdate
     publishdate:
