@@ -301,6 +301,7 @@ molecules:
         file: haz/atomic/molecules/page/page_title_prefix_singular_000.html
       props:
         separator: ": "
+        prefix_singular: true
       children:
         enabled_false:
           enabled: false
