@@ -99,7 +99,7 @@ atoms:
         cms:
           provider: page
       props:
-        prefix_singular: false
+        _prefix_singular: false
       children:
         enabled_false:
           enabled: false
