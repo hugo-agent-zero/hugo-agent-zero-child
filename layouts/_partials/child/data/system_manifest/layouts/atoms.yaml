@@ -98,8 +98,6 @@ atoms:
         preset: content/presets/atomic/atoms/head_tags/document_title_000_00.yaml
         cms:
           provider: page
-      props:
-        prefix_singular: false
       children:
         enabled_false:
           enabled: false
