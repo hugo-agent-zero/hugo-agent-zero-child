@@ -15,20 +15,20 @@
   --haz_do_tab_fill: var(--accent-bg);
   /* Callout type colors. Recolor here. The type rules only read these.
      Kit defaults are in haz.css :root; this file wins. Types may share a color. */
-  --haz_callout_note: var(--text-light, var(--border));
-  --haz_callout_tip: var(--yellow-7, var(--marked));
-  --haz_callout_info: var(--blue-6, var(--haz_site_primary, var(--accent)));
-  --haz_callout_code: var(--code);
-  --haz_callout_warning: var(--red-7, var(--code));
-  --haz_callout_caution: var(--yellow-7, var(--marked));
-  --haz_callout_cancel: var(--red-7, var(--code));
-  --haz_callout_important: var(--blue-6, var(--haz_site_primary, var(--accent)));
-  --haz_callout_happy: var(--yellow-7, var(--marked));
-  --haz_callout_sad: var(--yellow-7, var(--marked));
-  --haz_callout_love: var(--red-7, var(--code));
-  --haz_callout_peace: var(--blue-6, var(--haz_site_primary, var(--accent)));
   --haz_callout_calendar: var(--text-light, var(--border));
+  --haz_callout_cancel: var(--red-7, var(--code));
+  --haz_callout_caution: var(--yellow-7, var(--marked));
+  --haz_callout_code: var(--code);
   --haz_callout_deadline: var(--text-light, var(--border));
+  --haz_callout_happy: var(--yellow-7, var(--marked));
+  --haz_callout_important: var(--blue-6, var(--haz_site_primary, var(--accent)));
+  --haz_callout_info: var(--blue-6, var(--haz_site_primary, var(--accent)));
+  --haz_callout_love: var(--red-7, var(--code));
+  --haz_callout_note: var(--text-light, var(--border));
+  --haz_callout_peace: var(--blue-6, var(--haz_site_primary, var(--accent)));
+  --haz_callout_sad: var(--yellow-7, var(--marked));
+  --haz_callout_tip: var(--yellow-7, var(--marked));
+  --haz_callout_warning: var(--red-7, var(--code));
 
   /*
     Measure + fluid type (#70 / child #87 calculator, OP stack).
