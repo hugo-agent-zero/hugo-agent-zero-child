@@ -3,6 +3,13 @@ settings:
     name: Hugo Agent Zero
     tagline: The is our FPO Hugo Agent Zero Tag Line
     copyright: Hugo Agent Zero # legal holder; may differ from site.name
+  # Traditional mins (Open Props --sm / --md / --size-lg).
+  # m = tablet min. t = desktop min. d = column, not a third img/grid hop.
+  # Readers prefer this. haz_img.config.max_px is the old max-of-band fallback.
+  breakpoints:
+    m: 480
+    t: 768
+    d: 1024
   paging:
     posts_per_page: 10
     pager_pages: 10     # <ol> slots; held constant. 5+ recommended (first + last + current + ellipses), not enforced.
@@ -60,10 +67,9 @@ settings:
       default_lazy: true
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
-      # Preset rwd.m|t|d ↔ these stamps (whole px). Unit in the name.
-      # m/t = viewport max for that band (sizes= when + CSS @media);
-      # d = column ceiling (not a BP). Open Props: --sm 480 / --md 768 / --size-lg 1024.
-      # https://open-props.style/
+      # Old max-of-band stamp. Prefer settings.breakpoints (mins, no +1).
+      # Kept so a child without breakpoints still resolves. m/t + 1 = when.
+      # d = column ceiling (same as breakpoints.d).
       max_px:
         m: 479
         t: 767
