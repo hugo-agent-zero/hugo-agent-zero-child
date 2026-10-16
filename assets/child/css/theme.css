@@ -27,6 +27,7 @@
   --haz_callout_note: var(--text-light, var(--border));
   --haz_callout_peace: var(--blue-6, var(--haz_site_primary, var(--accent)));
   --haz_callout_sad: var(--yellow-7, var(--marked));
+  --haz_callout_steps: var(--haz_site_primary);
   --haz_callout_tip: var(--yellow-7, var(--marked));
   --haz_callout_warning: var(--red-7, var(--code));
 
