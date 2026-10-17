@@ -5,7 +5,7 @@ settings:
     copyright: Hugo Agent Zero # legal holder; may differ from site.name
   # Traditional mins (Open Props --sm / --md / --size-lg).
   # m = tablet min. t = desktop min. d = column, not a third img/grid hop.
-  # Readers prefer this. haz_img.config.max_px is the old max-of-band fallback.
+  # Readers prefer this. The old max-of-band stamp is parked at haz_img.config._max_px.
   breakpoints:
     m: 480
     t: 768
@@ -67,15 +67,14 @@ settings:
       default_lazy: true
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
-      # Old max-of-band stamp. Prefer settings.breakpoints (mins, no +1).
-      # Kept so a child without breakpoints still resolves. m/t + 1 = when.
-      # d = column ceiling (same as breakpoints.d).
-      max_px:
+      # Parked. Old max-of-band stamp. Nothing reads this. Cleanup later.
+      # m/t were the band ceilings (breakpoints.m|t - 1). d = column ceiling.
+      _max_px:
         m: 479
         t: 767
         d: 1024
       # File menu: key → width px. Stamp; do not derive. Not the HTML sizes= attr.
-      # sm|md|lg match max_px.m|t|d; xs/xl/xxl are extra rungs (DPR / smaller).
+      # sm|md|lg are the file widths at the old band ceilings; xs/xl/xxl are extra rungs (DPR / smaller).
       width_px:
         xs: 240
         sm: 479
@@ -194,4 +193,4 @@ settings:
             w: 67
             align: right
             ratio: "3/4"
-    # rwd.m|t|d ↔ config.max_px + width_px.sm|md|lg. Helpers swappable (variant_widths_fn / rwd_resolve_fn).
+    # rwd.m|t|d ↔ settings.breakpoints + width_px.sm|md|lg. Helpers swappable (variant_widths_fn / rwd_resolve_fn).
