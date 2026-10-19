@@ -86,19 +86,20 @@ settings:
       helpers:
         variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
         rwd_resolve_fn: haz/helpers/fn/fn_haz_img_rwd_resolve.html
-    # Mom types these names. Engine stays here.
+    # Mom types the key (name="story_wide"). Engine stays here.
+    # _term is parked: a human label for that key. Nothing reads it. Cleanup later.
     # rwd.m|t|d: w (25|33|50|67|75|100 % of column), align, ratio (e.g. "16/9"). Omit → inherit above.
     # fit cover for v1 when any band has ratio. class is leftovers.
     presets:
       story_wide:
-        term: Wide
+        _term: Wide
         fit: cover
         rwd:
           m:
             w: 100
             ratio: "16/9"
       half_sqr_left:
-        term: Half square left
+        _term: Half square left
         fit: cover
         rwd:
           m:
@@ -106,7 +107,7 @@ settings:
             align: left
             ratio: "1/1"
       half_sqr_right:
-        term: Half square right
+        _term: Half square right
         fit: cover
         rwd:
           m:
@@ -114,7 +115,7 @@ settings:
             align: right
             ratio: "1/1"
       desk_half_left:
-        term: Full then half left
+        _term: Full then half left
         fit: cover
         rwd:
           m:
@@ -124,7 +125,7 @@ settings:
             w: 50
             align: left
       quarter_right:
-        term: Quarter right
+        _term: Quarter right
         fit: cover
         rwd:
           m:
@@ -132,7 +133,7 @@ settings:
             align: right
             ratio: "1/1"
       mid_center:
-        term: Mid centered
+        _term: Mid centered
         fit: cover
         rwd:
           m:
@@ -144,12 +145,12 @@ settings:
           d:
             w: 75
       as_is:
-        term: As is
+        _term: As is
         rwd:
           m:
             w: 100
       story_tall:
-        term: Tall
+        _term: Tall
         fit: cover
         rwd:
           m:
@@ -157,7 +158,7 @@ settings:
             ratio: "3/4"
       # Dogfood: ratio per band (same w). Cover crops change at 480 / 768.
       ratio_shift:
-        term: Ratio shift m/t/d
+        _term: Ratio shift m/t/d
         fit: cover
         rwd:
           m:
@@ -169,7 +170,7 @@ settings:
             ratio: "3/4"
       # Dogfood: true-third width (CSS 33.333% + sizes hole).
       third_left:
-        term: Third left
+        _term: Third left
         fit: cover
         rwd:
           m:
@@ -178,7 +179,7 @@ settings:
             ratio: "1/1"
       # Dogfood: two-thirds + ratio still moves across bands.
       two_thirds_ratio:
-        term: Two-thirds ratio mix
+        _term: Two-thirds ratio mix
         fit: cover
         rwd:
           m:
