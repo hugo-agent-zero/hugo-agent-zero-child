@@ -86,112 +86,481 @@ settings:
       helpers:
         variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
         rwd_resolve_fn: haz/helpers/fn/fn_haz_img_rwd_resolve.html
-    # Mom types the key (name="story_wide"). Engine stays here.
-    # _term is parked: a human label for that key. Nothing reads it. Cleanup later.
-    # rwd.m|t|d: w (25|33|50|67|75|100 % of column), align, ratio (e.g. "16/9"). Omit → inherit above.
-    # fit cover for v1 when any band has ratio. class is leftovers.
+    # Mom types the key (name="full_widescreen"). Engine stays here.
+    # _term is parked: a human label for that key. Nothing reads it.
+    # Layout x crop bank. Width stable on m unless the key is an alt hop.
+    # Crops: sqr 1/1, portrait 3/4, landscape 4/3, widescreen 16/9.
+    # Designer picks 3-5 keys for Mom. She may never see the whole bank.
     presets:
-      story_wide:
-        _term: Wide
+      as_is:
+        _term: As is
+        rwd:
+          m:
+            w: 100
+      full_sqr:
+        _term: Full Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 100
+            ratio: "1/1"
+      full_portrait:
+        _term: Full Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 100
+            ratio: "3/4"
+      full_landscape:
+        _term: Full Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 100
+            ratio: "4/3"
+      full_widescreen:
+        _term: Full Widescreen
         fit: cover
         rwd:
           m:
             w: 100
             ratio: "16/9"
-      half_sqr_left:
-        _term: Half square left
+      half_left_sqr:
+        _term: Half Left Sqr
         fit: cover
         rwd:
           m:
             w: 50
             align: left
             ratio: "1/1"
-      half_sqr_right:
-        _term: Half square right
+      half_left_portrait:
+        _term: Half Left Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: left
+            ratio: "3/4"
+      half_left_landscape:
+        _term: Half Left Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: left
+            ratio: "4/3"
+      half_left_widescreen:
+        _term: Half Left Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: left
+            ratio: "16/9"
+      half_center_sqr:
+        _term: Half Center Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: center
+            ratio: "1/1"
+      half_center_portrait:
+        _term: Half Center Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: center
+            ratio: "3/4"
+      half_center_landscape:
+        _term: Half Center Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: center
+            ratio: "4/3"
+      half_center_widescreen:
+        _term: Half Center Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: center
+            ratio: "16/9"
+      half_right_sqr:
+        _term: Half Right Sqr
         fit: cover
         rwd:
           m:
             w: 50
             align: right
             ratio: "1/1"
-      desk_half_left:
-        _term: Full then half left
+      half_right_portrait:
+        _term: Half Right Portrait
         fit: cover
         rwd:
           m:
-            w: 100
-            ratio: "16/9"
-          d:
             w: 50
+            align: right
+            ratio: "3/4"
+      half_right_landscape:
+        _term: Half Right Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: right
+            ratio: "4/3"
+      half_right_widescreen:
+        _term: Half Right Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            align: right
+            ratio: "16/9"
+      third_left_sqr:
+        _term: Third Left Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 33
             align: left
-      quarter_right:
-        _term: Quarter right
+            ratio: "1/1"
+      third_left_portrait:
+        _term: Third Left Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: left
+            ratio: "3/4"
+      third_left_landscape:
+        _term: Third Left Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: left
+            ratio: "4/3"
+      third_left_widescreen:
+        _term: Third Left Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: left
+            ratio: "16/9"
+      third_center_sqr:
+        _term: Third Center Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: center
+            ratio: "1/1"
+      third_center_portrait:
+        _term: Third Center Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: center
+            ratio: "3/4"
+      third_center_landscape:
+        _term: Third Center Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: center
+            ratio: "4/3"
+      third_center_widescreen:
+        _term: Third Center Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: center
+            ratio: "16/9"
+      third_right_sqr:
+        _term: Third Right Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: right
+            ratio: "1/1"
+      third_right_portrait:
+        _term: Third Right Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: right
+            ratio: "3/4"
+      third_right_landscape:
+        _term: Third Right Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: right
+            ratio: "4/3"
+      third_right_widescreen:
+        _term: Third Right Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 33
+            align: right
+            ratio: "16/9"
+      two_thirds_left_sqr:
+        _term: Two Thirds Left Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: left
+            ratio: "1/1"
+      two_thirds_left_portrait:
+        _term: Two Thirds Left Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: left
+            ratio: "3/4"
+      two_thirds_left_landscape:
+        _term: Two Thirds Left Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: left
+            ratio: "4/3"
+      two_thirds_left_widescreen:
+        _term: Two Thirds Left Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: left
+            ratio: "16/9"
+      two_thirds_center_sqr:
+        _term: Two Thirds Center Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: center
+            ratio: "1/1"
+      two_thirds_center_portrait:
+        _term: Two Thirds Center Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: center
+            ratio: "3/4"
+      two_thirds_center_landscape:
+        _term: Two Thirds Center Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: center
+            ratio: "4/3"
+      two_thirds_center_widescreen:
+        _term: Two Thirds Center Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: center
+            ratio: "16/9"
+      two_thirds_right_sqr:
+        _term: Two Thirds Right Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: right
+            ratio: "1/1"
+      two_thirds_right_portrait:
+        _term: Two Thirds Right Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: right
+            ratio: "3/4"
+      two_thirds_right_landscape:
+        _term: Two Thirds Right Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: right
+            ratio: "4/3"
+      two_thirds_right_widescreen:
+        _term: Two Thirds Right Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 67
+            align: right
+            ratio: "16/9"
+      quarter_left_sqr:
+        _term: Quarter Left Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: left
+            ratio: "1/1"
+      quarter_left_portrait:
+        _term: Quarter Left Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: left
+            ratio: "3/4"
+      quarter_left_landscape:
+        _term: Quarter Left Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: left
+            ratio: "4/3"
+      quarter_left_widescreen:
+        _term: Quarter Left Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: left
+            ratio: "16/9"
+      quarter_center_sqr:
+        _term: Quarter Center Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: center
+            ratio: "1/1"
+      quarter_center_portrait:
+        _term: Quarter Center Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: center
+            ratio: "3/4"
+      quarter_center_landscape:
+        _term: Quarter Center Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: center
+            ratio: "4/3"
+      quarter_center_widescreen:
+        _term: Quarter Center Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: center
+            ratio: "16/9"
+      quarter_right_sqr:
+        _term: Quarter Right Sqr
         fit: cover
         rwd:
           m:
             w: 25
             align: right
             ratio: "1/1"
-      mid_center:
-        _term: Mid centered
+      quarter_right_portrait:
+        _term: Quarter Right Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: right
+            ratio: "3/4"
+      quarter_right_landscape:
+        _term: Quarter Right Landscape
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: right
+            ratio: "4/3"
+      quarter_right_widescreen:
+        _term: Quarter Right Widescreen
+        fit: cover
+        rwd:
+          m:
+            w: 25
+            align: right
+            ratio: "16/9"
+      three_quarters_center_sqr:
+        _term: Three Quarters Center Sqr
+        fit: cover
+        rwd:
+          m:
+            w: 75
+            align: center
+            ratio: "1/1"
+      three_quarters_center_portrait:
+        _term: Three Quarters Center Portrait
+        fit: cover
+        rwd:
+          m:
+            w: 75
+            align: center
+            ratio: "3/4"
+      three_quarters_center_landscape:
+        _term: Three Quarters Center Landscape
         fit: cover
         rwd:
           m:
             w: 75
             align: center
             ratio: "4/3"
-          t:
-            w: 50
-          d:
+      three_quarters_center_widescreen:
+        _term: Three Quarters Center Widescreen
+        fit: cover
+        rwd:
+          m:
             w: 75
-      as_is:
-        _term: As is
-        rwd:
-          m:
-            w: 100
-      story_tall:
-        _term: Tall
-        fit: cover
-        rwd:
-          m:
-            w: 100
-            ratio: "3/4"
-      # Dogfood: ratio per band (same w). Cover crops change at 480 / 768.
-      ratio_shift:
-        _term: Ratio shift m/t/d
+            align: center
+            ratio: "16/9"
+      # Alt: phone full, desk half left. Name says the hop.
+      full_to_half_left:
+        _term: Full To Half Left
         fit: cover
         rwd:
           m:
             w: 100
             ratio: "16/9"
-          t:
-            ratio: "1/1"
           d:
-            ratio: "3/4"
-      # Dogfood: true-third width (CSS 33.333% + sizes hole).
-      third_left:
-        _term: Third left
+            w: 50
+            align: left
+      # Alt: half centered on phone, three-quarters centered from tablet up.
+      three_quarters_from_half:
+        _term: Three Quarters From Half
         fit: cover
         rwd:
           m:
-            w: 33
-            align: left
-            ratio: "1/1"
-      # Dogfood: two-thirds + ratio still moves across bands.
-      two_thirds_ratio:
-        _term: Two-thirds ratio mix
-        fit: cover
-        rwd:
-          m:
-            w: 67
-            align: right
-            ratio: "16/9"
+            w: 50
+            align: center
+            ratio: "4/3"
           t:
-            w: 33
-            align: left
-            ratio: "1/1"
-          d:
-            w: 67
-            align: right
-            ratio: "3/4"
+            w: 75
     # rwd.m|t|d ↔ settings.breakpoints + width_px.sm|md|lg. Helpers swappable (variant_widths_fn / rwd_resolve_fn).
