@@ -69,6 +69,14 @@ settings:
       # Page-bundle stubs still win as Mom wrote them. Shortcode process= overrides.
       # true = Mom drops one master; Hugo fills the ladder. false = file-only.
       process: true
+      # Process format allowlist (rwd_widths.*.format). Not listed → inherit
+      # (same as master). inherit is never listed. jpg normalizes to jpeg.
+      # Core fallback if omitted: jpeg|webp|avif|png. Add tiff/bmp/gif here if needed.
+      formats_allow:
+        - jpeg
+        - webp
+        - avif
+        - png
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
       # Parked. Old max-of-band stamp. Nothing reads this. Cleanup later.
@@ -82,10 +90,9 @@ settings:
       # xs/xl/xxl are extra rungs (smaller / DPR). HAZ custom defaults; presets may
       # layer overrides on top (only fields they set). Mom never edits this.
       #   px     — output width Hugo Resize targets (and the Nw in srcset).
-      #   format — process output when a stub is missing. inherit unless a valid
-      #            value overrides it. Valid: inherit + Hugo formats
-      #            (avif|bmp|gif|jpeg|png|tiff|webp; jpg→jpeg). Else → inherit.
-      #            Stubs still win as Mom wrote them; src stays the master.
+      #   format — process output when a stub is missing. Must be in
+      #            config.formats_allow (jpg→jpeg). Else → inherit. Stubs still
+      #            win as Mom wrote them; src stays the master.
       #   q      — quality for process-built rungs only; stubs ignore q.
       #            Keys match Hugo format names (jpeg, webp, avif, …). Passed on
       #            the Resize spec (e.g. "1024x q75" or "1024x webp q75").
