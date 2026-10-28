@@ -79,39 +79,50 @@ settings:
         d: 1024
       # File menu for srcset + process. Stamp; do not derive. Not the HTML sizes= attr.
       # Each key (xs…xxl) is a ladder rung. sm|md|lg match the old band ceilings;
-      # xs/xl/xxl are extra rungs (smaller / DPR).
-      #   px — output width Hugo Resize targets (and the Nw in srcset).
-      #   q  — quality (compression) for process-built rungs only; stubs ignore q.
-      #        Keys under q are Hugo imaging format names (jpeg today; webp later).
-      #        That value is passed on the Resize spec (e.g. "1024x q75") so Hugo
-      #        recompresses while it resizes. 1–100 = HAZ wins; -1 or omit = leave
-      #        qN off and use Hugo’s site default (imaging.jpeg.quality, usually 75).
-      # Bare int still OK (lg: 1024 → px only, q.jpeg -1).
+      # xs/xl/xxl are extra rungs (smaller / DPR). HAZ custom defaults; presets may
+      # layer overrides on top (only fields they set). Mom never edits this.
+      #   px     — output width Hugo Resize targets (and the Nw in srcset).
+      #   format — process output when a stub is missing. inherit unless a valid
+      #            value overrides it (inherit|webp this pass). Empty/typo → inherit.
+      #            Stubs still win as Mom wrote them; src stays the master.
+      #   q      — quality for process-built rungs only; stubs ignore q.
+      #            Keys are Hugo imaging format names (jpeg, webp). Passed on the
+      #            Resize spec (e.g. "1024x q75" or "1024x webp q75"). 1–100 = HAZ
+      #            wins; -1 or omit = Hugo site default for that format.
+      # Bare int still OK (lg: 1024 → px only, format inherit, q.* -1).
+      # Dogfood: small rungs inherit (JPEG from JPEG master); lg+ → webp.
       rwd_widths:
         xs:
           px: 240
+          format: inherit
           q:
             jpeg: 70
         sm:
           px: 479
+          format: inherit
           q:
             jpeg: 75
         md:
           px: 767
+          format: inherit
           q:
             jpeg: 75
         lg:
           px: 1024
+          format: webp
           q:
             jpeg: 75
+            webp: 75
         xl:
           px: 1536
+          format: webp
           q:
-            jpeg: 75
+            webp: 75
         xxl:
           px: 2048
+          format: webp
           q:
-            jpeg: 75
+            webp: 75
       # Swappable helpers (child may point at another partial).
       helpers:
         rwd_widths_fn: haz/helpers/fn/fn_haz_img_rwd_widths.html
@@ -121,8 +132,8 @@ settings:
     # Layout x crop bank. Width stable on m unless the key is an alt hop.
     # Crops: sqr 1/1, portrait 3/4, landscape 4/3, widescreen 16/9.
     # Designer picks 3-5 keys for Mom. She may never see the whole bank.
-    # Optional presets.*.rwd_widths deep-merges over config.rwd_widths for that key
-    # (preset fields win; q maps merge per format — e.g. bump only lg.q.jpeg).
+    # Optional presets.*.rwd_widths — that preset’s layer on HAZ defaults
+    # (only fields set: format / q.* / px). Example: bump headshot q, or force inherit.
     presets:
       as_is:
         _term: As is
@@ -153,11 +164,11 @@ settings:
       full_widescreen:
         _term: Full Widescreen
         fit: cover
-        # Dogfood: lg process rung at q90 so _hu_ hash/bytes differ from config 75.
+        # Dogfood: lg webp at q90 so _hu_ hash/bytes differ from config webp 75.
         rwd_widths:
           lg:
             q:
-              jpeg: 90
+              webp: 90
         rwd:
           m:
             w: 100
