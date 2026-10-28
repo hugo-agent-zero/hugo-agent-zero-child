@@ -67,7 +67,8 @@ settings:
       default_lazy: true
       # Fill missing width_px stubs via Hugo Resize (width-only). Page-bundle
       # stubs still win. Shortcode process=true|false overrides. Quality later.
-      process: false
+      # true = Mom drops one master; Hugo fills the ladder. false = file-only.
+      process: true
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
       # Parked. Old max-of-band stamp. Nothing reads this. Cleanup later.
