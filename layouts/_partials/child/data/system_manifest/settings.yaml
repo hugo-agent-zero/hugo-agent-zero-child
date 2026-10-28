@@ -83,12 +83,13 @@ settings:
       # layer overrides on top (only fields they set). Mom never edits this.
       #   px     — output width Hugo Resize targets (and the Nw in srcset).
       #   format — process output when a stub is missing. inherit unless a valid
-      #            value overrides it (inherit|webp this pass). Empty/typo → inherit.
+      #            value overrides it. Valid: inherit + Hugo formats
+      #            (avif|bmp|gif|jpeg|png|tiff|webp; jpg→jpeg). Else → inherit.
       #            Stubs still win as Mom wrote them; src stays the master.
       #   q      — quality for process-built rungs only; stubs ignore q.
-      #            Keys are Hugo imaging format names (jpeg, webp). Passed on the
-      #            Resize spec (e.g. "1024x q75" or "1024x webp q75"). 1–100 = HAZ
-      #            wins; -1 or omit = Hugo site default for that format.
+      #            Keys match Hugo format names (jpeg, webp, avif, …). Passed on
+      #            the Resize spec (e.g. "1024x q75" or "1024x webp q75").
+      #            1–100 = HAZ wins; -1 or omit = Hugo site default for that format.
       # Bare int still OK (lg: 1024 → px only, format inherit, q.* -1).
       # Dogfood: small rungs inherit (JPEG from JPEG master); lg+ → webp.
       rwd_widths:
