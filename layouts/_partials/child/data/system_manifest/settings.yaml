@@ -65,9 +65,10 @@ settings:
       variant_sep: "_"
       # Most pictures wait. Set false on the shortcode for a hero: lazy=false.
       default_lazy: true
-      # Fill missing width_px stubs via Hugo Resize (width-only). Page-bundle
-      # stubs still win. Shortcode process=true|false overrides. Quality later.
+      # Fill missing rwd_widths stubs via Hugo Resize (width-only). Page-bundle
+      # stubs still win. Shortcode process=true|false overrides.
       # true = Mom drops one master; Hugo fills the ladder. false = file-only.
+      # q.jpeg 1–100 on Resize; -1/omit = Hugo imaging.jpeg.quality. webp later.
       process: true
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
@@ -77,18 +78,36 @@ settings:
         m: 479
         t: 767
         d: 1024
-      # File menu: key → width px. Stamp; do not derive. Not the HTML sizes= attr.
+      # File menu: key → { px, q.jpeg }. Stamp; do not derive. Not the HTML sizes= attr.
       # sm|md|lg are the file widths at the old band ceilings; xs/xl/xxl are extra rungs (DPR / smaller).
-      width_px:
-        xs: 240
-        sm: 479
-        md: 767
-        lg: 1024
-        xl: 1536
-        xxl: 2048
+      rwd_widths:
+        xs:
+          px: 240
+          q:
+            jpeg: 70
+        sm:
+          px: 479
+          q:
+            jpeg: 75
+        md:
+          px: 767
+          q:
+            jpeg: 75
+        lg:
+          px: 1024
+          q:
+            jpeg: 75
+        xl:
+          px: 1536
+          q:
+            jpeg: 75
+        xxl:
+          px: 2048
+          q:
+            jpeg: 75
       # Swappable helpers (child may point at another partial).
       helpers:
-        variant_widths_fn: haz/helpers/fn/fn_haz_img_variant_widths.html
+        rwd_widths_fn: haz/helpers/fn/fn_haz_img_rwd_widths.html
         rwd_resolve_fn: haz/helpers/fn/fn_haz_img_rwd_resolve.html
     # Mom types the key (name="full_widescreen"). Engine stays here.
     # _term is parked: a human label for that key. Nothing reads it.
@@ -125,6 +144,11 @@ settings:
       full_widescreen:
         _term: Full Widescreen
         fit: cover
+        # Dogfood: bump lg quality so process Resize hash differs from config default.
+        rwd_widths:
+          lg:
+            q:
+              jpeg: 90
         rwd:
           m:
             w: 100
@@ -567,4 +591,4 @@ settings:
             ratio: "4/3"
           t:
             w: 75
-    # rwd.m|t|d ↔ settings.breakpoints + width_px.sm|md|lg. Helpers swappable (variant_widths_fn / rwd_resolve_fn).
+    # rwd.m|t|d ↔ settings.breakpoints + rwd_widths.sm|md|lg.px. Helpers swappable (rwd_widths_fn / rwd_resolve_fn).
