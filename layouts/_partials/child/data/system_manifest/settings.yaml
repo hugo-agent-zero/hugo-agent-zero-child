@@ -64,7 +64,7 @@ settings:
     config:
       variant_sep: "_"
       # Most pictures wait. Set false on the shortcode for a hero: lazy=false.
-      default_lazy: true
+      lazy_default: true
       # Fill missing rwd_widths stubs via Hugo Resize (width-only; aspect kept).
       # Page-bundle stubs still win as Mom wrote them. Shortcode process= overrides.
       # true = Mom drops one master; Hugo fills the ladder. false = file-only.
