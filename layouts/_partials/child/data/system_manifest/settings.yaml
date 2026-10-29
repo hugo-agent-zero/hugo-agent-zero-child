@@ -69,15 +69,19 @@ settings:
       # Page-bundle stubs still win as Mom wrote them. Shortcode process= overrides.
       # true = Mom drops one master; Hugo fills the ladder. false = file-only.
       process: true
-      # Process format allowlist. HAZ opinion = jpeg|webp|avif|png (jpg→jpeg).
-      # Omit / empty → core uses that same baked default. Set this list to override
-      # (narrower or wider). Hugo Resize also accepts bmp|gif|tiff if you need them.
-      # Not on the list / empty format → inherit. Not Mom-facing.
-      # Dogfood: webp dropped — rwd_widths format: webp should → inherit (JPEG).
-      formats_allow:
+      # Process format allowlist — PARKED. Nothing reads _formats_allow.
+      # Live key is formats_allow; omit/empty → core baked HAZ opinion
+      # (jpeg|webp|avif|png; jpg→jpeg). Un-park (rename) to override narrower
+      # or wider. List below = all Hugo Resize tokens we care about as FYI.
+      # Not on the live list / empty format → inherit. Not Mom-facing.
+      _formats_allow:
         - jpeg
+        - webp
         - avif
         - png
+        - bmp
+        - gif
+        - tiff
 
       # Parked. Size to the band; ~1rem hole pad is accepted overshoot.
       content_inset: 1
@@ -92,9 +96,10 @@ settings:
       # xs/xl/xxl are extra rungs (smaller / DPR). HAZ custom defaults; presets may
       # layer overrides on top (only fields they set). Mom never edits this.
       #   px     — output width Hugo Resize targets (and the Nw in srcset).
-      #   format — process output when a stub is missing. Must be in
-      #            formats_allow (or core default if that list is empty).
-      #            Else → inherit. Stubs still win; src stays the master.
+      #   format — process output when a stub is missing. Must be in live
+      #            formats_allow (or core baked default when that key is
+      #            omit/empty / parked as _formats_allow). Else → inherit.
+      #            Stubs still win; src stays the master.
       #   q      — quality for process-built rungs only; stubs ignore q.
       #            Keys match Hugo format names (jpeg, webp, avif, …). Passed on
       #            the Resize spec (e.g. "1024x q75" or "1024x webp q75").
