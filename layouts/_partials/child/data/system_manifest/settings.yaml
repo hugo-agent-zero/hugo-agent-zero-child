@@ -130,11 +130,13 @@ settings:
           px: 1536
           format: webp
           q:
+            jpeg: 75
             webp: 75
         xxl:
           px: 2048
           format: webp
           q:
+            jpeg: 75
             webp: 75
       # Swappable helpers (child may point at another partial).
       helpers:
@@ -181,6 +183,7 @@ settings:
         rwd_widths:
           lg:
             q:
+              jpeg: 90
               webp: 90
         rwd:
           m:
