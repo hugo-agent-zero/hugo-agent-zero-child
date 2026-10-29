@@ -214,7 +214,8 @@ settings:
             ratio: "16/9"
       half_left_sqr:
         _term: Half Left Sqr
-        fit: cover
+        # Dogfood: contain (not cover) so framed crop differs on eyes-on.
+        fit: contain
         rwd:
           m:
             w: 50
