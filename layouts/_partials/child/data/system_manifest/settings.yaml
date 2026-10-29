@@ -73,9 +73,9 @@ settings:
       # Omit / empty → core uses that same baked default. Set this list to override
       # (narrower or wider). Hugo Resize also accepts bmp|gif|tiff if you need them.
       # Not on the list / empty format → inherit. Not Mom-facing.
-      # Dogfood: webp dropped — rwd_widths format: webp should → inherit (JPEG).
       formats_allow:
         - jpeg
+        - webp
         - avif
         - png
 
