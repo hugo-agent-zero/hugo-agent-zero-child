@@ -147,6 +147,8 @@ settings:
     # Layout x crop bank. Width stable on m unless the key is an alt hop.
     # Crops: sqr 1/1, portrait 3/4, landscape 4/3, widescreen 16/9.
     # Designer picks 3-5 keys for Mom. She may never see the whole bank.
+    # enabled — omit/true = on; only false turns this preset off (intentional).
+    # enabled_false — when off, resolve that preset key as if Mom called it.
     # Optional presets.*.rwd_widths — that preset’s layer on HAZ defaults
     # (only fields set: format / q.* / px). Example: bump headshot q, or force inherit.
     presets:
@@ -155,6 +157,25 @@ settings:
         rwd:
           m:
             w: 100
+      # Dogfood: soft-off redirects to as_is (Mom can still type this name).
+      demo_off_redirect:
+        _term: Demo Off Redirect
+        enabled: false
+        enabled_false: as_is
+        fit: cover
+        rwd:
+          m:
+            w: 100
+            ratio: "16/9"
+      # Dogfood: soft-off with no redirect → same as missing preset (no enrich).
+      demo_off_dead:
+        _term: Demo Off Dead
+        enabled: false
+        fit: cover
+        rwd:
+          m:
+            w: 50
+            ratio: "1/1"
       full_sqr:
         _term: Full Sqr
         fit: cover
