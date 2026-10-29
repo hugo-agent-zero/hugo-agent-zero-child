@@ -67,7 +67,9 @@ settings:
       lazy_default: true
       # When name= is omitted or does not match a preset, try this key next
       # (same resolve path as a typed name). Ship: as_is.
-      preset_default: as_is
+      # TEMP dogfood: dead key so name + preset_default both fail →
+      # name_not_in_presets (comment + Inner). Revert to as_is after eyes-on.
+      preset_default: __dogfood_no_preset__
       # Fail knobs — each is { prod: bool } for now (other env keys later).
       # src_404: src= is not a page resource. true = still emit the tag
       # (broken image). false = HTML comment only. Ship prod: false.
