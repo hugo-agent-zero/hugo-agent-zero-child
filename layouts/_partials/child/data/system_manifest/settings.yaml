@@ -102,7 +102,8 @@ settings:
       #            Keys match Hugo format names (jpeg, webp, avif, …). Passed on
       #            the Resize spec (e.g. "1024x q75" or "1024x webp q75").
       #            1–100 = HAZ wins; -1 or omit = Hugo site default for that format.
-      # Bare int still OK (lg: 1024 → px only, format inherit, q.* -1).
+      #   enabled — omit/true = include rung; false = no process, no srcset for it.
+      # Bare int still OK (lg: 1024 → px only, format inherit, q.* -1, enabled true).
       # Dogfood: small rungs inherit (JPEG from JPEG master); lg+ → webp.
       rwd_widths:
         xs:
@@ -150,7 +151,8 @@ settings:
     # enabled — omit/true = on; only false turns this preset off (intentional).
     # enabled_false — when off, resolve that preset key as if Mom called it.
     # Optional presets.*.rwd_widths — that preset’s layer on HAZ defaults
-    # (only fields set: format / q.* / px). Example: bump headshot q, or force inherit.
+    # (only fields set: format / q.* / px / enabled). Example: bump headshot q,
+    # or set lg/xl/xxl enabled: false when the layout stays small.
     presets:
       as_is:
         _term: As is
@@ -501,6 +503,14 @@ settings:
       quarter_left_sqr:
         _term: Quarter Left Sqr
         fit: cover
+        # Dogfood: small layout — skip large ladder rungs.
+        rwd_widths:
+          lg:
+            enabled: false
+          xl:
+            enabled: false
+          xxl:
+            enabled: false
         rwd:
           m:
             w: 25
