@@ -65,6 +65,9 @@ settings:
       variant_sep: "_"
       # Most pictures wait. Set false on the shortcode for a hero: lazy=false.
       lazy_default: true
+      # When name= is omitted or does not match a preset, try this key next
+      # (same resolve path as a typed name). Ship: as_is.
+      preset_default: as_is
       # Fill missing rwd_widths stubs via Hugo Resize (width-only; aspect kept).
       # Page-bundle stubs still win as Mom wrote them. Shortcode process= overrides.
       # true = Mom drops one master; Hugo fills the ladder. false = file-only.
