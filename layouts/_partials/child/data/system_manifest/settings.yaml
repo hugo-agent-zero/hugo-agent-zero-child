@@ -64,7 +64,19 @@ settings:
     config:
       variant_sep: "_"
       # Most pictures wait. Set false on the shortcode for a hero: lazy=false.
-      default_lazy: true
+      lazy_default: true
+      # When name= is omitted or does not match a preset, try this key next
+      # (same resolve path as a typed name). Ship: as_is.
+      preset_default: as_is
+      # Fail knobs — each is { prod: bool } for now (other env keys later).
+      # src_404: src= is not a page resource. true = still emit the tag
+      # (broken image). false = HTML comment only. Ship prod: false.
+      src_404:
+        prod: false
+      # name_not_in_presets: name + preset_default missed. Always an HTML
+      # comment; true = also emit Inner as-is. Ship prod: true.
+      name_not_in_presets:
+        prod: true
       # Fill missing rwd_widths stubs via Hugo Resize (width-only; aspect kept).
       # Page-bundle stubs still win as Mom wrote them. Shortcode process= overrides.
       # true = Mom drops one master; Hugo fills the ladder. false = file-only.
