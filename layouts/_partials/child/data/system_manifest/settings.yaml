@@ -14,8 +14,9 @@ settings:
     posts_per_page: 10
     pager_pages: 10     # <ol> slots; held constant. 5+ recommended (first + last + current + ellipses), not enforced.
     pager_pages_swipe: true
-  # Site surface: listed shortcodes (and haz_do verbs) may run. Omit this
-  # block → allow all. Off switch: _-park an entry (e.g. _haz_img, _tabs).
+  # Site surface: listed shortcodes (and haz_do verbs) may run. Intentional —
+  # _-park whitelist (or shortcodes) → all shortcodes off. _-park one entry
+  # (e.g. _haz_img, _tabs) → that name/verb off.
   shortcodes:
     whitelist:
       - haz_img
