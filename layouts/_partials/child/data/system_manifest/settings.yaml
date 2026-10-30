@@ -19,15 +19,16 @@ settings:
   # (e.g. _haz_img, _tabs) → that name/verb off.
   shortcodes:
     whitelist:
-      - haz_img
+      # DOGFOOD: park haz_img / list / grid — expect blank + whitelist comment.
+      - _haz_img
       - haz_tbd
       - haz_do:
         - spacer
         - callout
-        - list
+        - _list
         - tabs
         - tab
-        - grid
+        - _grid
   dates:
     default: publishdate
     publishdate:
